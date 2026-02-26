@@ -5,6 +5,7 @@ import TriangleDiagram from "@/components/TriangleDiagram";
 import book1 from "@/assets/book-1.jpg";
 import book2 from "@/assets/book-2.jpg";
 import portrait from "@/assets/erika-portrait.jpg";
+import vslVideo from "@/assets/vsl-video.mp4";
 
 const Index = () => {
   return (
@@ -49,11 +50,12 @@ const Index = () => {
               "If your students participate but still struggle to think independently,
               this introduction is for you."
             </p>
-            <div className="aspect-video bg-foreground/5 border border-border flex items-center justify-center">
-              <span className="text-muted-foreground text-sm tracking-widest uppercase">
-                Video Introduction — Coming Soon
-              </span>
-            </div>
+            <video
+              src={vslVideo}
+              controls
+              className="aspect-video w-full border border-border"
+              poster=""
+            />
           </FadeIn>
         </div>
       </section>

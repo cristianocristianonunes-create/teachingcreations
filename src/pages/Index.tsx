@@ -5,6 +5,7 @@ import TriangleDiagram from "@/components/TriangleDiagram";
 import book1 from "@/assets/book-1.jpg";
 import book2 from "@/assets/book-2.jpg";
 import portrait from "@/assets/erika-portrait.jpg";
+import logo from "@/assets/logo-transparent.png";
 import vslVideo from "@/assets/vsl-video.mp4";
 
 const Index = () => {
@@ -13,7 +14,8 @@ const Index = () => {
       {/* 1. HERO */}
       <section className="min-h-[90vh] flex items-center">
         <div className="container mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
-          <FadeIn>
+          <FadeIn className="flex flex-col items-start">
+            <img src={logo} alt="Teaching Creations" className="h-36 w-36 object-contain mb-8" />
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif leading-tight tracking-tight text-foreground">
               Making Thinking{" "}
               <span className="italic text-primary">Visible.</span>

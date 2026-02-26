@@ -14,6 +14,8 @@ import Login from "./pages/admin/Login";
 import AdminLayout from "./components/admin/AdminLayout";
 import Dashboard from "./pages/admin/Dashboard";
 import AdminPlaceholder from "./pages/admin/AdminPlaceholder";
+import InsightsList from "./pages/admin/InsightsList";
+import InsightEditor from "./pages/admin/InsightEditor";
 
 const queryClient = new QueryClient();
 
@@ -37,7 +39,8 @@ const App = () => (
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<Dashboard />} />
             <Route path="content" element={<AdminPlaceholder />} />
-            <Route path="insights" element={<AdminPlaceholder />} />
+            <Route path="insights" element={<InsightsList />} />
+            <Route path="insights/:id" element={<InsightEditor />} />
             <Route path="books" element={<AdminPlaceholder />} />
             <Route path="sales" element={<AdminPlaceholder />} />
             <Route path="audience" element={<AdminPlaceholder />} />

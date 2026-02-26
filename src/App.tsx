@@ -13,7 +13,6 @@ import NotFound from "./pages/NotFound";
 import Login from "./pages/admin/Login";
 import AdminLayout from "./components/admin/AdminLayout";
 import Dashboard from "./pages/admin/Dashboard";
-import AdminPlaceholder from "./pages/admin/AdminPlaceholder";
 import InsightsList from "./pages/admin/InsightsList";
 import InsightEditor from "./pages/admin/InsightEditor";
 import BooksList from "./pages/admin/BooksList";
@@ -21,6 +20,10 @@ import BookEditor from "./pages/admin/BookEditor";
 import AudienceList from "./pages/admin/AudienceList";
 import PdRequestsList from "./pages/admin/PdRequestsList";
 import TestimonialsList from "./pages/admin/TestimonialsList";
+import ContentManager from "./pages/admin/ContentManager";
+import SalesAnalytics from "./pages/admin/SalesAnalytics";
+import MediaKit from "./pages/admin/MediaKit";
+import SettingsPage from "./pages/admin/SettingsPage";
 
 const queryClient = new QueryClient();
 
@@ -43,17 +46,17 @@ const App = () => (
           <Route path="/admin/login" element={<Login />} />
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<Dashboard />} />
-            <Route path="content" element={<AdminPlaceholder />} />
+            <Route path="content" element={<ContentManager />} />
             <Route path="insights" element={<InsightsList />} />
             <Route path="insights/:id" element={<InsightEditor />} />
             <Route path="books" element={<BooksList />} />
             <Route path="books/:id" element={<BookEditor />} />
-            <Route path="sales" element={<AdminPlaceholder />} />
+            <Route path="sales" element={<SalesAnalytics />} />
             <Route path="audience" element={<AudienceList />} />
             <Route path="pd-requests" element={<PdRequestsList />} />
             <Route path="testimonials" element={<TestimonialsList />} />
-            <Route path="media-kit" element={<AdminPlaceholder />} />
-            <Route path="settings" element={<AdminPlaceholder />} />
+            <Route path="media-kit" element={<MediaKit />} />
+            <Route path="settings" element={<SettingsPage />} />
           </Route>
 
           <Route path="*" element={<NotFound />} />

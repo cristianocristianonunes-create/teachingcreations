@@ -37,7 +37,7 @@ const Navigation = () => {
     >
       <nav className="container mx-auto flex items-center justify-between py-4 px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="Teaching Creations" className="h-14 w-14 object-contain" />
+          <img src={logo} alt="Teaching Creations" className="h-20 w-20 object-contain" />
           <span className="font-serif text-sm tracking-widest uppercase text-muted-foreground hidden sm:block">
             Teaching Creations
           </span>

@@ -1,7 +1,17 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/logo.png";
+
+const TriangleLogo = ({ className = "" }: { className?: string }) => (
+  <svg viewBox="0 0 60 52" fill="none" className={className}>
+    <polygon
+      points="30,2 58,50 2,50"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      fill="none"
+    />
+  </svg>
+);
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -37,7 +47,7 @@ const Navigation = () => {
     >
       <nav className="container mx-auto flex items-center justify-between py-4 px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="Teaching Creations" className="h-10 w-10 object-contain" />
+          <TriangleLogo className="h-9 w-9 text-primary" />
           <span className="font-serif text-sm tracking-widest uppercase text-muted-foreground hidden sm:block">
             Teaching Creations
           </span>

@@ -51,12 +51,15 @@ const Index = () => {
               "If your students participate but still struggle to think independently,
               this introduction is for you."
             </p>
-            <video
-              src={vslVideo}
-              controls
-              className="aspect-video w-full border border-border"
-              poster=""
-            />
+            <div className="relative p-4 rounded-lg border-2 border-primary/40 bg-primary/5 shadow-[0_0_30px_-5px_hsl(var(--primary)/0.15)]">
+              <div className="absolute inset-0 rounded-lg border border-primary/20 m-1.5 pointer-events-none" />
+              <video
+                src={vslVideo}
+                controls
+                className="aspect-video w-full rounded-sm relative z-10"
+                poster=""
+              />
+            </div>
           </FadeIn>
         </div>
       </section>

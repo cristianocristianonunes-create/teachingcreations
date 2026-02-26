@@ -16,6 +16,11 @@ import Dashboard from "./pages/admin/Dashboard";
 import AdminPlaceholder from "./pages/admin/AdminPlaceholder";
 import InsightsList from "./pages/admin/InsightsList";
 import InsightEditor from "./pages/admin/InsightEditor";
+import BooksList from "./pages/admin/BooksList";
+import BookEditor from "./pages/admin/BookEditor";
+import AudienceList from "./pages/admin/AudienceList";
+import PdRequestsList from "./pages/admin/PdRequestsList";
+import TestimonialsList from "./pages/admin/TestimonialsList";
 
 const queryClient = new QueryClient();
 
@@ -41,11 +46,12 @@ const App = () => (
             <Route path="content" element={<AdminPlaceholder />} />
             <Route path="insights" element={<InsightsList />} />
             <Route path="insights/:id" element={<InsightEditor />} />
-            <Route path="books" element={<AdminPlaceholder />} />
+            <Route path="books" element={<BooksList />} />
+            <Route path="books/:id" element={<BookEditor />} />
             <Route path="sales" element={<AdminPlaceholder />} />
-            <Route path="audience" element={<AdminPlaceholder />} />
-            <Route path="pd-requests" element={<AdminPlaceholder />} />
-            <Route path="testimonials" element={<AdminPlaceholder />} />
+            <Route path="audience" element={<AudienceList />} />
+            <Route path="pd-requests" element={<PdRequestsList />} />
+            <Route path="testimonials" element={<TestimonialsList />} />
             <Route path="media-kit" element={<AdminPlaceholder />} />
             <Route path="settings" element={<AdminPlaceholder />} />
           </Route>

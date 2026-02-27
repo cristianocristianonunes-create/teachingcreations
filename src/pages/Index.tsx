@@ -5,8 +5,8 @@ import TriangleDiagram from "@/components/TriangleDiagram";
 import book1 from "@/assets/book-1.jpg";
 import book2 from "@/assets/book-2.jpg";
 import portrait from "@/assets/erika-portrait.jpg";
-import logo from "@/assets/logo-transparent.png";
 import vslVideo from "@/assets/vsl-video.mp4";
+import VideoWithPoster from "@/components/VideoWithPoster";
 
 const Index = () => {
   return (
@@ -53,11 +53,8 @@ const Index = () => {
             </p>
             <div className="relative p-4 rounded-lg border-2 border-primary/40 bg-primary/5 shadow-[0_0_30px_-5px_hsl(var(--primary)/0.15)]">
               <div className="absolute inset-0 rounded-lg border border-primary/20 m-1.5 pointer-events-none" />
-              <video
+              <VideoWithPoster
                 src={vslVideo}
-                controls
-                className="aspect-video w-full rounded-sm relative z-10"
-                poster=""
               />
             </div>
           </FadeIn>

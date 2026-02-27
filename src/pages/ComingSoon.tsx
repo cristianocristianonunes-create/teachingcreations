@@ -1,4 +1,4 @@
-import logo from "@/assets/logo-emblem-clean.png";
+import logo from "@/assets/logo-icon-transparent.png";
 
 const ComingSoon = () => {
   return (

@@ -1,16 +1,60 @@
 
 
-# Substituir imagem na página Coming Soon
+## Plano: Corrigir site em branco nos domínios de produção
 
-## O que será feito
-Substituir a logomarca atual na página Coming Soon pela nova imagem do triângulo com o ícone do cérebro que você enviou.
+### Problema identificado
 
-## Passos
+O componente `ComingSoon` usa `useNavigate()` do React Router, mas no `App.tsx`, quando o hostname e `teachingcreations.com`, ele e renderizado **antes** do `<BrowserRouter>`, causando um erro fatal (tela branca).
 
-1. **Copiar a nova imagem** para `src/assets/logo-emblem-clean.png` (substituindo o arquivo existente)
-2. **Atualizar o import** em `src/pages/ComingSoon.tsx` para usar `logo-emblem-clean.png` em vez de `logo-full.png`
+```text
+App.tsx fluxo atual:
 
-## Detalhes técnicos
-- Arquivo editado: `src/pages/ComingSoon.tsx` -- alterar import de `logo-full.png` para `logo-emblem-clean.png`
-- Asset copiado: `user-uploads://ChatGPT_Image_27_de_fev._de_2026_00_32_27.png` para `src/assets/logo-emblem-clean.png`
+  if (isMainDomain) {
+    return <ComingSoon />   <-- SEM BrowserRouter! useNavigate() crasha
+  }
+
+  return (
+    <BrowserRouter>         <-- BrowserRouter so existe aqui
+      ...
+    </BrowserRouter>
+  )
+```
+
+### Solucao
+
+**Arquivo:** `src/App.tsx`
+
+Mover o `<BrowserRouter>` para envolver TODA a aplicacao, incluindo o bloco `ComingSoon`:
+
+```text
+App.tsx fluxo corrigido:
+
+  return (
+    <QueryClientProvider>
+      <TooltipProvider>
+        <BrowserRouter>          <-- Agora envolve tudo
+          {isMainDomain ? (
+            <ComingSoon />       <-- Funciona com useNavigate()
+          ) : (
+            <Routes>...</Routes>
+          )}
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  )
+```
+
+### Arquivos modificados
+
+- `src/App.tsx` -- Reestruturar para que BrowserRouter envolva todo o app
+
+### Resultado esperado
+
+- `teachingcreations.com` -- Exibe a pagina Coming Soon corretamente (sem tela branca)
+- `testing.teachingcreations.com` e preview -- Exibe a landing page completa
+- O botao "Admin" na pagina Coming Soon funciona corretamente
+
+### Proximo passo apos aprovacao
+
+Apos implementar, sera necessario clicar em **Publish > Update** para que as mudancas aparecam nos dominios reais.
 

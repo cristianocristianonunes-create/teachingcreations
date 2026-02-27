@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
 import TriangleDiagram from "@/components/TriangleDiagram";
-import logoFull from "@/assets/logo-full.png";
+import logoTransparent from "@/assets/logo-icon-transparent.png";
 import book1 from "@/assets/book-1.jpg";
 import book2 from "@/assets/book-2.jpg";
 import portrait from "@/assets/erika-portrait.jpg";
@@ -38,15 +38,12 @@ const Index = () => {
               </Link>
             </div>
           </FadeIn>
-          <FadeIn delay={0.2} className="flex justify-center">
-            <div className="flex flex-col items-center gap-6">
-              <img
-                src={logoFull}
-                alt="Teaching Creations logo"
-                className="w-40 md:w-48 object-contain drop-shadow-lg"
-              />
-              <TriangleDiagram />
-            </div>
+          <FadeIn delay={0.2} className="flex justify-center items-center">
+            <img
+              src={logoTransparent}
+              alt="Teaching Creations logo"
+              className="w-56 md:w-72 lg:w-80 object-contain drop-shadow-[0_0_40px_hsl(var(--accent)/0.2)]"
+            />
           </FadeIn>
         </div>
       </section>

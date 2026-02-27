@@ -1,32 +1,23 @@
 
 
-# "Under Construction" Page for teachingcreations.com
+# Add Logo Next to Triangle Diagram in Hero Section
 
-## Goal
-Show a professional "Coming Soon / Under Construction" page when visitors access `teachingcreations.com`, while the full site remains accessible via `testing.teachingcreations.com` for private review.
+## What Will Change
+The hero section on the homepage currently shows only the triangle diagram on the right side. We will add the Teaching Creations logo (the triangle with the head/brain silhouette) next to the diagram, creating a harmonious visual composition.
 
-## Approach
-Detect the hostname in the app and conditionally render either the full site or a "Coming Soon" page.
+## Design Approach
+- Copy the uploaded logo image (`ChatGPT_Image_25_de_fev._de_2026_22_38_00-2.png`) into `src/assets/` as `logo-full.png`
+- In the hero section of `Index.tsx`, arrange the logo and the triangle diagram vertically stacked (logo on top, diagram below) or side-by-side, centered together in the right column
+- The logo will be displayed at a size large enough to show detail (around w-40 to w-48) with the triangle diagram below it, creating a cohesive branded visual
+- Both elements will share the same fade-in animation for a smooth entrance
 
-## Changes
-
-### 1. Create a ComingSoon page (`src/pages/ComingSoon.tsx`)
-- Clean, elegant page with the Teaching Creations logo
-- "Coming Soon" / "Under Construction" messaging in English
-- Minimalist design consistent with the brand (dark background, serif typography, gold accent)
-- No navigation or links to the full site
-
-### 2. Update App routing (`src/App.tsx`)
-- Add hostname detection logic
-- If the hostname is the main domain (`teachingcreations.com` or `www.teachingcreations.com`), render only the ComingSoon page for all routes
-- If the hostname is `testing.teachingcreations.com` or localhost/preview, render the full site normally
-
-### 3. Domain setup
-- Connect `testing.teachingcreations.com` in Lovable Settings for private access to the full site
-- Later, when ready to launch, simply remove the hostname check to make the full site live on the main domain
+## Files to Change
+1. **Copy asset**: `user-uploads://ChatGPT_Image_25_de_fev._de_2026_22_38_00-2.png` to `src/assets/logo-full.png`
+2. **Edit `src/pages/Index.tsx`**: Update the hero right column to include the logo image above the triangle diagram in a vertically centered flex layout
 
 ## Technical Details
-- The hostname check uses `window.location.hostname`
-- A simple conditional in `App.tsx` will switch between the full router and the ComingSoon page
-- When you're ready to go live, we just remove the condition and all routes work on the main domain
+- Import the new logo asset in Index.tsx
+- Replace the single `<TriangleDiagram />` in the hero with a flex-column container holding both the logo and the diagram
+- Use consistent spacing (gap-6) and centering to keep the composition balanced
+- The logo gets a subtle drop shadow for depth, matching the brand aesthetic
 

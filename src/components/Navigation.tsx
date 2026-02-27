@@ -35,31 +35,44 @@ const Navigation = () => {
           : "bg-transparent"
       }`}
     >
-      <nav className="container mx-auto flex items-center justify-between py-4 px-6 lg:px-8">
+      <nav className="container mx-auto flex items-center justify-between py-3 px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="Teaching Creations" className="h-14 w-14 lg:h-24 lg:w-24 object-cover object-[50%_18%] [clip-path:polygon(50%_2%,98%_98%,2%_98%)]" />
+          <img
+            src={logo}
+            alt="Teaching Creations"
+            className="h-10 w-10 lg:h-12 lg:w-12 object-contain rounded-sm"
+          />
           <span className="font-serif text-sm tracking-widest uppercase text-muted-foreground hidden sm:block">
             Teaching Creations
           </span>
         </Link>
 
         {/* Desktop */}
-        <ul className="hidden lg:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <li key={link.path}>
-              <Link
-                to={link.path}
-                className={`text-sm tracking-wide transition-colors duration-200 hover:text-primary ${
-                  location.pathname === link.path
-                    ? "text-primary font-medium"
-                    : "text-muted-foreground"
-                }`}
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className="hidden lg:flex items-center gap-8">
+          <ul className="flex items-center gap-7">
+            {navLinks.map((link) => (
+              <li key={link.path}>
+                <Link
+                  to={link.path}
+                  className={`text-sm tracking-wide transition-colors duration-200 hover:text-primary ${
+                    location.pathname === link.path
+                      ? "text-primary font-medium"
+                      : "text-muted-foreground"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          {/* Sticky CTA */}
+          <Link
+            to="/books"
+            className="px-5 py-2 bg-primary text-primary-foreground text-xs font-medium tracking-widest uppercase hover:opacity-90 transition-opacity"
+          >
+            Explore the Books
+          </Link>
+        </div>
 
         {/* Mobile toggle */}
         <button
@@ -74,7 +87,7 @@ const Navigation = () => {
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="lg:hidden bg-background border-b border-border">
-          <ul className="flex flex-col items-center gap-6 py-8">
+          <ul className="flex flex-col items-center gap-5 py-6">
             {navLinks.map((link) => (
               <li key={link.path}>
                 <Link
@@ -89,6 +102,14 @@ const Navigation = () => {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link
+                to="/books"
+                className="inline-flex px-6 py-2.5 bg-primary text-primary-foreground text-xs font-medium tracking-widest uppercase"
+              >
+                Explore the Books
+              </Link>
+            </li>
           </ul>
         </div>
       )}

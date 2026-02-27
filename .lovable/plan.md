@@ -1,47 +1,32 @@
 
-# Capa para o VSL (Video Poster)
 
-## Problema
-O primeiro frame do vídeo VSL mostra a Erika de boca aberta, o que não transmite a imagem profissional desejada. O atributo `poster` do `<video>` está vazio.
+# "Under Construction" Page for teachingcreations.com
 
-## Solucao
+## Goal
+Show a professional "Coming Soon / Under Construction" page when visitors access `teachingcreations.com`, while the full site remains accessible via `testing.teachingcreations.com` for private review.
 
-Criar um **overlay de capa personalizado** em React que aparece sobre o video antes do play. Ao clicar, o overlay desaparece e o video comeca a reproduzir.
+## Approach
+Detect the hostname in the app and conditionally render either the full site or a "Coming Soon" page.
 
-A capa tera um design branded com:
-- Fundo escuro (cor foreground do tema: `hsl(220 15% 18%)`)
-- Logo da marca (`logo-transparent.png`) centralizado
-- Titulo elegante em fonte serif: "Making Thinking Visible"
-- Subtitulo: "Watch the Introduction"
-- Icone de play circular animado (pulse suave)
-- A moldura verde existente sera mantida
+## Changes
 
-## Mudancas Tecnicas
+### 1. Create a ComingSoon page (`src/pages/ComingSoon.tsx`)
+- Clean, elegant page with the Teaching Creations logo
+- "Coming Soon" / "Under Construction" messaging in English
+- Minimalist design consistent with the brand (dark background, serif typography, gold accent)
+- No navigation or links to the full site
 
-### 1. Criar componente `src/components/VideoWithPoster.tsx`
-- Componente que encapsula o `<video>` com um overlay absoluto
-- Estado `isPlaying` controla visibilidade do overlay
-- Ao clicar no overlay, chama `video.play()` e esconde o poster
-- Usa o logo, titulo e um botao de play estilizado
-- Transicao suave com opacity ao iniciar
+### 2. Update App routing (`src/App.tsx`)
+- Add hostname detection logic
+- If the hostname is the main domain (`teachingcreations.com` or `www.teachingcreations.com`), render only the ComingSoon page for all routes
+- If the hostname is `testing.teachingcreations.com` or localhost/preview, render the full site normally
 
-### 2. Atualizar `src/pages/Index.tsx`
-- Substituir o `<video>` direto pelo novo componente `<VideoWithPoster>`
-- Manter toda a moldura verde existente ao redor
+### 3. Domain setup
+- Connect `testing.teachingcreations.com` in Lovable Settings for private access to the full site
+- Later, when ready to launch, simply remove the hostname check to make the full site live on the main domain
 
-### Resultado Visual
-```text
-+----------------------------------+
-|  [moldura verde elegante]        |
-|  +----------------------------+  |
-|  |                            |  |
-|  |     [Logo transparente]    |  |
-|  |                            |  |
-|  |   Making Thinking Visible  |  |
-|  |                            |  |
-|  |        ( > Play )          |  |
-|  |   Watch the Introduction   |  |
-|  |                            |  |
-|  +----------------------------+  |
-+----------------------------------+
-```
+## Technical Details
+- The hostname check uses `window.location.hostname`
+- A simple conditional in `App.tsx` will switch between the full router and the ComingSoon page
+- When you're ready to go live, we just remove the condition and all routes work on the main domain
+

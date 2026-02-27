@@ -40,18 +40,17 @@ const App = () => {
         <Sonner />
         <BrowserRouter>
           <Routes>
-            {/* Coming Soon on main domain root */}
-            {isMainDomain && <Route path="/" element={<ComingSoon />} />}
+            {/* Root: Coming Soon on main domain, full site otherwise */}
+            <Route path="/" element={isMainDomain ? <ComingSoon /> : <Index />} />
 
-            {/* Full site: accessible via /teste on main domain, or normally on other domains */}
-            <Route path={isMainDomain ? "/teste" : "/"} element={<Index />} />
-            <Route path={isMainDomain ? "/teste/cycle-of-thinking" : "/cycle-of-thinking"} element={<CycleOfThinking />} />
-            <Route path={isMainDomain ? "/teste/books" : "/books"} element={<Books />} />
-            <Route path={isMainDomain ? "/teste/about" : "/about"} element={<About />} />
-            <Route path={isMainDomain ? "/teste/insights" : "/insights"} element={<Insights />} />
-            <Route path={isMainDomain ? "/teste/contact" : "/contact"} element={<Contact />} />
+            {/* All other routes always accessible */}
+            <Route path="/cycle-of-thinking" element={<CycleOfThinking />} />
+            <Route path="/books" element={<Books />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/insights" element={<Insights />} />
+            <Route path="/contact" element={<Contact />} />
 
-            {/* Admin routes always at /admin */}
+            {/* Admin routes */}
             <Route path="/admin/login" element={<Login />} />
             <Route path="/admin" element={<AdminLayout />}>
               <Route index element={<Dashboard />} />

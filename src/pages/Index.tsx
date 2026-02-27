@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
 import TriangleDiagram from "@/components/TriangleDiagram";
-import logoTransparent from "@/assets/logo-icon-transparent.png";
+import logoFull from "@/assets/logo-full.png";
 import book1 from "@/assets/book-1.jpg";
 import book2 from "@/assets/book-2.jpg";
 import portrait from "@/assets/erika-portrait.jpg";
@@ -38,12 +38,8 @@ const Index = () => {
               </Link>
             </div>
           </FadeIn>
-          <FadeIn delay={0.2} className="flex justify-center items-center">
-            <img
-              src={logoTransparent}
-              alt="Teaching Creations logo"
-              className="w-56 md:w-72 lg:w-80 object-contain drop-shadow-[0_0_40px_hsl(var(--accent)/0.2)]"
-            />
+          <FadeIn delay={0.2} className="flex justify-center">
+            <TriangleDiagram />
           </FadeIn>
         </div>
       </section>
@@ -103,6 +99,11 @@ const Index = () => {
       <section className="py-24 bg-secondary">
         <div className="container mx-auto px-6 lg:px-8 max-w-2xl text-center">
           <FadeIn>
+            <img
+              src={logoFull}
+              alt="Teaching Creations"
+              className="w-48 md:w-64 mx-auto mb-10 object-contain drop-shadow-[0_0_30px_hsl(var(--accent)/0.15)]"
+            />
             <h2 className="text-3xl md:text-4xl font-serif leading-snug mb-6">
               The Challenge Is Not Content.
               <br />

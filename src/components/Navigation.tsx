@@ -68,12 +68,12 @@ const Navigation = () => {
             ))}
           </ul>
           {/* Sticky CTA */}
-          <Link
-            to="/books"
+          <a
+            href="#email-capture"
             className="px-5 py-2 bg-primary text-primary-foreground text-xs font-medium tracking-widest uppercase hover:opacity-90 transition-opacity"
           >
-            Explore the Books
-          </Link>
+            Free Chapter
+          </a>
         </div>
 
         {/* Mobile toggle */}
@@ -105,12 +105,12 @@ const Navigation = () => {
               </li>
             ))}
             <li>
-              <Link
-                to="/books"
+              <a
+                href="#email-capture"
                 className="inline-flex px-6 py-2.5 bg-primary text-primary-foreground text-xs font-medium tracking-widest uppercase"
               >
-                Explore the Books
-              </Link>
+                Free Chapter
+              </a>
             </li>
           </ul>
         </div>

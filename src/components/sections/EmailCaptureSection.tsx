@@ -32,17 +32,20 @@ const EmailCaptureSection = () => {
   };
 
   return (
-    <section className="py-20">
+    <section className="py-16" id="email-capture">
       <div className="container mx-auto px-6 lg:px-8 max-w-xl text-center">
         <FadeIn>
-          <h2 className="text-3xl md:text-4xl font-serif mb-3">
-            Get a Free Chapter
+          <h2 className="text-3xl md:text-4xl font-serif mb-2">
+            Download a Free Chapter
           </h2>
-          <p className="text-sm text-muted-foreground font-sans leading-relaxed mb-8">
-            Download Chapter One of Strategic Access and discover how to design intentional
+          <p className="text-sm text-muted-foreground font-sans leading-relaxed mb-2">
+            Get Chapter One of Strategic Access and discover how to design intentional
             cognitive entry points for your students.
           </p>
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <p className="text-xs text-primary font-medium font-sans mb-6">
+            Join educators already applying the framework.
+          </p>
+          <form onSubmit={handleSubmit} className="space-y-3">
             <input
               type="text"
               placeholder="Your name"

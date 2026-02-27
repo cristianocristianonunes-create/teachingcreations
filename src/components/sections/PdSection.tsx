@@ -2,18 +2,18 @@ import { PrefixedLink as Link } from "@/contexts/PathPrefixContext";
 import FadeIn from "@/components/FadeIn";
 
 const PdSection = () => (
-  <section className="py-16 bg-secondary">
+  <section className="py-14 bg-secondary">
     <div className="container mx-auto px-6 lg:px-8 max-w-2xl text-center">
       <FadeIn>
         <p className="text-xs tracking-widest uppercase text-accent mb-3 font-sans font-medium">
-          For Schools & Districts
+          For Schools &amp; Districts
         </p>
         <h2 className="text-2xl md:text-3xl font-serif mb-3">
           Bring The Cycle of Thinking™ to Your School
         </h2>
-        <p className="text-sm text-muted-foreground font-sans leading-relaxed mb-8">
-          Professional development sessions designed to help educators make thinking visible
-          across content areas, grade levels, and language backgrounds.
+        <p className="text-sm text-muted-foreground font-sans leading-relaxed mb-6">
+          Customized professional development sessions designed to help your entire team
+          make thinking visible — across content areas, grade levels, and language backgrounds.
         </p>
         <Link
           to="/contact"

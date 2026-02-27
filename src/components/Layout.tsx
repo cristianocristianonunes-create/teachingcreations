@@ -1,19 +1,49 @@
 import { PrefixedLink as Link } from "@/contexts/PathPrefixContext";
 import Navigation from "./Navigation";
+import { useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
+  const [footerEmail, setFooterEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!footerEmail.trim()) return;
+    setLoading(true);
+    try {
+      const { error } = await supabase.from("contacts").insert({
+        name: "Newsletter Subscriber",
+        email: footerEmail.trim(),
+        source: "footer_newsletter",
+        interest_type: "newsletter",
+      });
+      if (error) throw error;
+      toast.success("Subscribed! Welcome aboard.");
+      setFooterEmail("");
+    } catch {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />
       <main className="flex-1 pt-16">{children}</main>
       <footer className="bg-foreground text-background">
-        <div className="container mx-auto px-6 lg:px-8 py-14">
+        <div className="container mx-auto px-6 lg:px-8 py-12">
           <div className="grid md:grid-cols-3 gap-10">
             {/* Brand */}
             <div>
               <p className="font-serif text-lg mb-2">Teaching Creations</p>
-              <p className="text-sm text-background/60 italic font-serif">
+              <p className="text-sm text-background/60 italic font-serif mb-3">
                 The Cycle of Thinking™
+              </p>
+              <p className="text-xs text-background/40 font-sans leading-relaxed">
+                Bridging research and classroom practice — making thinking visible, measurable, and teachable.
               </p>
             </div>
 
@@ -37,18 +67,29 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               ))}
             </div>
 
-            {/* Newsletter teaser */}
+            {/* Newsletter */}
             <div>
               <p className="text-xs tracking-widest uppercase text-background/40 mb-3 font-sans font-medium">Stay Updated</p>
-              <p className="text-sm text-background/60 font-sans leading-relaxed mb-4">
+              <p className="text-sm text-background/60 font-sans leading-relaxed mb-3">
                 Receive insights on making thinking visible in your classroom.
               </p>
-              <Link
-                to="/contact"
-                className="inline-flex items-center text-sm text-accent font-medium tracking-widest uppercase hover:underline underline-offset-4 font-sans"
-              >
-                Get in Touch →
-              </Link>
+              <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
+                <input
+                  type="email"
+                  placeholder="Your email"
+                  required
+                  value={footerEmail}
+                  onChange={(e) => setFooterEmail(e.target.value)}
+                  className="flex-1 px-3 py-2 bg-background/10 border border-background/20 text-background text-sm font-sans focus:outline-none focus:ring-1 focus:ring-accent placeholder:text-background/40"
+                />
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="px-4 py-2 bg-accent text-accent-foreground text-xs font-medium tracking-widest uppercase hover:opacity-90 transition-opacity disabled:opacity-50"
+                >
+                  {loading ? "…" : "Join"}
+                </button>
+              </form>
             </div>
           </div>
 

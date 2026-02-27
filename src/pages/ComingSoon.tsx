@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import logo from "@/assets/logo-emblem-clean.png";
 
 const ComingSoon = () => {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-foreground flex flex-col items-center justify-center px-6 text-center relative overflow-hidden">
       {/* Subtle decorative triangle outlines in background */}
@@ -48,6 +50,13 @@ const ComingSoon = () => {
       <p className="relative z-10 mt-16 text-[10px] text-muted-foreground/40 font-sans tracking-[0.25em] uppercase fade-in fade-in-delay-3">
         Teaching Creations
       </p>
+
+      <button
+        onClick={() => navigate("/admin/login")}
+        className="absolute bottom-6 right-6 z-10 text-[10px] text-muted-foreground/30 hover:text-muted-foreground/60 transition-colors font-sans tracking-wide uppercase cursor-pointer"
+      >
+        Admin
+      </button>
     </div>
   );
 };

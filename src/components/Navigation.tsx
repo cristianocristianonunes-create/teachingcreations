@@ -40,7 +40,7 @@ const Navigation = () => {
           <img
             src={logo}
             alt="Teaching Creations"
-            className="h-10 w-10 lg:h-12 lg:w-12 object-contain rounded-sm"
+            className="h-14 w-14 lg:h-16 lg:w-16 object-contain"
           />
           <span className="font-serif text-sm tracking-widest uppercase text-muted-foreground hidden sm:block">
             Teaching Creations

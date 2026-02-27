@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { PrefixedLink as Link, usePathPrefix } from "@/contexts/PathPrefixContext";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo-nav.png";
 
@@ -16,6 +17,7 @@ const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
+  const prefix = usePathPrefix();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -55,7 +57,7 @@ const Navigation = () => {
                 <Link
                   to={link.path}
                   className={`text-sm tracking-wide transition-colors duration-200 hover:text-primary ${
-                    location.pathname === link.path
+                    location.pathname === `${prefix}${link.path}`
                       ? "text-primary font-medium"
                       : "text-muted-foreground"
                   }`}
@@ -93,7 +95,7 @@ const Navigation = () => {
                 <Link
                   to={link.path}
                   className={`text-base tracking-wide transition-colors duration-200 hover:text-primary ${
-                    location.pathname === link.path
+                    location.pathname === `${prefix}${link.path}`
                       ? "text-primary font-medium"
                       : "text-muted-foreground"
                   }`}

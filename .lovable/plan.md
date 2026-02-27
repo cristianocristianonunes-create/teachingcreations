@@ -1,23 +1,38 @@
 
 
-# Add Logo Next to Triangle Diagram in Hero Section
+# Fix Logo and Redesign Landing Page Hero with Prominent Branding
 
-## What Will Change
-The hero section on the homepage currently shows only the triangle diagram on the right side. We will add the Teaching Creations logo (the triangle with the head/brain silhouette) next to the diagram, creating a harmonious visual composition.
+## Problem
+1. The "Coming Soon" page shows the logo with a visible square/checkered background -- the PNG transparency isn't working properly with `logo-full.png`
+2. On the main landing page (Index.tsx), the logo is too small (w-40/w-48) to see the details
 
-## Design Approach
-- Copy the uploaded logo image (`ChatGPT_Image_25_de_fev._de_2026_22_38_00-2.png`) into `src/assets/` as `logo-full.png`
-- In the hero section of `Index.tsx`, arrange the logo and the triangle diagram vertically stacked (logo on top, diagram below) or side-by-side, centered together in the right column
-- The logo will be displayed at a size large enough to show detail (around w-40 to w-48) with the triangle diagram below it, creating a cohesive branded visual
-- Both elements will share the same fade-in animation for a smooth entrance
+## Solution
 
-## Files to Change
-1. **Copy asset**: `user-uploads://ChatGPT_Image_25_de_fev._de_2026_22_38_00-2.png` to `src/assets/logo-full.png`
-2. **Edit `src/pages/Index.tsx`**: Update the hero right column to include the logo image above the triangle diagram in a vertically centered flex layout
+### 1. Fix Coming Soon page (`src/pages/ComingSoon.tsx`)
+- Switch from `logo-emblem-clean.png` to `logo-icon-transparent.png` (which should have proper transparency)
+- If that asset also has issues, use `logo-transparent.png` instead
+- Keep the large size (w-48 / w-64) so details are visible
 
-## Technical Details
-- Import the new logo asset in Index.tsx
-- Replace the single `<TriangleDiagram />` in the hero with a flex-column container holding both the logo and the diagram
-- Use consistent spacing (gap-6) and centering to keep the composition balanced
-- The logo gets a subtle drop shadow for depth, matching the brand aesthetic
+### 2. Redesign Hero Section on Landing Page (`src/pages/Index.tsx`)
+**Suggestion: Replace the logo+triangle combo in the hero with just the logo at a much larger size, and keep the triangle diagram only in section 5 (The Model section) where it already appears with full explanations.**
 
+This approach:
+- Gives the logo maximum visual impact in the hero (w-64 to w-80 on desktop)
+- Avoids redundancy (the triangle diagram already appears further down with proper context)
+- Maintains intellectual authority -- the logo becomes the dominant branded visual
+- Keeps the hero clean and editorial
+
+Changes to the hero right column:
+- Remove `TriangleDiagram` from the hero
+- Display `logo-icon-transparent.png` at a large size (w-56 md:w-72 lg:w-80) with a subtle drop shadow
+- Center it vertically in the right column for a balanced, elegant composition
+
+### Files to Change
+1. **`src/pages/ComingSoon.tsx`** -- switch to a properly transparent logo asset
+2. **`src/pages/Index.tsx`** -- hero section: remove triangle diagram, use large transparent logo as the sole visual
+
+### Technical Details
+- Import `logo-icon-transparent.png` instead of `logo-full.png` in both files
+- In Index.tsx hero, replace the flex-col container (logo + TriangleDiagram) with just the logo image at `w-56 md:w-72 lg:w-80`
+- Add a subtle glow effect via `drop-shadow` to give it depth against the light background
+- The TriangleDiagram import stays in Index.tsx since it's still used in section 5

@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ComingSoon from "./pages/ComingSoon";
 import Index from "./pages/Index";
 import CycleOfThinking from "./pages/CycleOfThinking";
 import Books from "./pages/Books";
@@ -27,43 +28,53 @@ import SettingsPage from "./pages/admin/SettingsPage";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          {/* Public routes */}
-          <Route path="/" element={<Index />} />
-          <Route path="/cycle-of-thinking" element={<CycleOfThinking />} />
-          <Route path="/books" element={<Books />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/insights" element={<Insights />} />
-          <Route path="/contact" element={<Contact />} />
+const hostname = window.location.hostname;
+const isMainDomain =
+  hostname === "teachingcreations.com" || hostname === "www.teachingcreations.com";
 
-          {/* Admin routes */}
-          <Route path="/admin/login" element={<Login />} />
-          <Route path="/admin" element={<AdminLayout />}>
-            <Route index element={<Dashboard />} />
-            <Route path="content" element={<ContentManager />} />
-            <Route path="insights" element={<InsightsList />} />
-            <Route path="insights/:id" element={<InsightEditor />} />
-            <Route path="books" element={<BooksList />} />
-            <Route path="books/:id" element={<BookEditor />} />
-            <Route path="sales" element={<SalesAnalytics />} />
-            <Route path="audience" element={<AudienceList />} />
-            <Route path="pd-requests" element={<PdRequestsList />} />
-            <Route path="testimonials" element={<TestimonialsList />} />
-            <Route path="media-kit" element={<MediaKit />} />
-            <Route path="settings" element={<SettingsPage />} />
-          </Route>
+const App = () => {
+  if (isMainDomain) {
+    return <ComingSoon />;
+  }
 
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            {/* Public routes */}
+            <Route path="/" element={<Index />} />
+            <Route path="/cycle-of-thinking" element={<CycleOfThinking />} />
+            <Route path="/books" element={<Books />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/insights" element={<Insights />} />
+            <Route path="/contact" element={<Contact />} />
+
+            {/* Admin routes */}
+            <Route path="/admin/login" element={<Login />} />
+            <Route path="/admin" element={<AdminLayout />}>
+              <Route index element={<Dashboard />} />
+              <Route path="content" element={<ContentManager />} />
+              <Route path="insights" element={<InsightsList />} />
+              <Route path="insights/:id" element={<InsightEditor />} />
+              <Route path="books" element={<BooksList />} />
+              <Route path="books/:id" element={<BookEditor />} />
+              <Route path="sales" element={<SalesAnalytics />} />
+              <Route path="audience" element={<AudienceList />} />
+              <Route path="pd-requests" element={<PdRequestsList />} />
+              <Route path="testimonials" element={<TestimonialsList />} />
+              <Route path="media-kit" element={<MediaKit />} />
+              <Route path="settings" element={<SettingsPage />} />
+            </Route>
+
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;

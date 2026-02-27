@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { PathPrefixProvider } from "@/contexts/PathPrefixContext";
 import ComingSoon from "./pages/ComingSoon";
 import Index from "./pages/Index";
 import CycleOfThinking from "./pages/CycleOfThinking";
@@ -32,6 +33,11 @@ const hostname = window.location.hostname;
 const isMainDomain =
   hostname === "teachingcreations.com" || hostname === "www.teachingcreations.com";
 
+/** Wraps children with the /teste prefix so all links point to /teste/... */
+const TestePrefix = ({ children }: { children: React.ReactNode }) => (
+  <PathPrefixProvider prefix="/teste">{children}</PathPrefixProvider>
+);
+
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
@@ -43,7 +49,15 @@ const App = () => {
             {/* Root: Coming Soon on main domain, full site otherwise */}
             <Route path="/" element={isMainDomain ? <ComingSoon /> : <Index />} />
 
-            {/* All other routes always accessible */}
+            {/* /teste routes — full site preview on main domain */}
+            <Route path="/teste" element={<TestePrefix><Index /></TestePrefix>} />
+            <Route path="/teste/cycle-of-thinking" element={<TestePrefix><CycleOfThinking /></TestePrefix>} />
+            <Route path="/teste/books" element={<TestePrefix><Books /></TestePrefix>} />
+            <Route path="/teste/about" element={<TestePrefix><About /></TestePrefix>} />
+            <Route path="/teste/insights" element={<TestePrefix><Insights /></TestePrefix>} />
+            <Route path="/teste/contact" element={<TestePrefix><Contact /></TestePrefix>} />
+
+            {/* Standard routes (always accessible) */}
             <Route path="/cycle-of-thinking" element={<CycleOfThinking />} />
             <Route path="/books" element={<Books />} />
             <Route path="/about" element={<About />} />

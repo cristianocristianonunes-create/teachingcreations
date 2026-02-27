@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { PrefixedLink as Link } from "@/contexts/PathPrefixContext";
 import FadeIn from "@/components/FadeIn";
 import portrait from "@/assets/erika-portrait.jpg";
 

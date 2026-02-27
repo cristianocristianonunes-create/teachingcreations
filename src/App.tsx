@@ -39,38 +39,37 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          {isMainDomain ? (
-            <ComingSoon />
-          ) : (
-            <Routes>
-              {/* Public routes */}
-              <Route path="/" element={<Index />} />
-              <Route path="/cycle-of-thinking" element={<CycleOfThinking />} />
-              <Route path="/books" element={<Books />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/insights" element={<Insights />} />
-              <Route path="/contact" element={<Contact />} />
+          <Routes>
+            {/* Coming Soon on main domain root */}
+            {isMainDomain && <Route path="/" element={<ComingSoon />} />}
 
-              {/* Admin routes */}
-              <Route path="/admin/login" element={<Login />} />
-              <Route path="/admin" element={<AdminLayout />}>
-                <Route index element={<Dashboard />} />
-                <Route path="content" element={<ContentManager />} />
-                <Route path="insights" element={<InsightsList />} />
-                <Route path="insights/:id" element={<InsightEditor />} />
-                <Route path="books" element={<BooksList />} />
-                <Route path="books/:id" element={<BookEditor />} />
-                <Route path="sales" element={<SalesAnalytics />} />
-                <Route path="audience" element={<AudienceList />} />
-                <Route path="pd-requests" element={<PdRequestsList />} />
-                <Route path="testimonials" element={<TestimonialsList />} />
-                <Route path="media-kit" element={<MediaKit />} />
-                <Route path="settings" element={<SettingsPage />} />
-              </Route>
+            {/* Full site: accessible via /teste on main domain, or normally on other domains */}
+            <Route path={isMainDomain ? "/teste" : "/"} element={<Index />} />
+            <Route path={isMainDomain ? "/teste/cycle-of-thinking" : "/cycle-of-thinking"} element={<CycleOfThinking />} />
+            <Route path={isMainDomain ? "/teste/books" : "/books"} element={<Books />} />
+            <Route path={isMainDomain ? "/teste/about" : "/about"} element={<About />} />
+            <Route path={isMainDomain ? "/teste/insights" : "/insights"} element={<Insights />} />
+            <Route path={isMainDomain ? "/teste/contact" : "/contact"} element={<Contact />} />
 
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          )}
+            {/* Admin routes always at /admin */}
+            <Route path="/admin/login" element={<Login />} />
+            <Route path="/admin" element={<AdminLayout />}>
+              <Route index element={<Dashboard />} />
+              <Route path="content" element={<ContentManager />} />
+              <Route path="insights" element={<InsightsList />} />
+              <Route path="insights/:id" element={<InsightEditor />} />
+              <Route path="books" element={<BooksList />} />
+              <Route path="books/:id" element={<BookEditor />} />
+              <Route path="sales" element={<SalesAnalytics />} />
+              <Route path="audience" element={<AudienceList />} />
+              <Route path="pd-requests" element={<PdRequestsList />} />
+              <Route path="testimonials" element={<TestimonialsList />} />
+              <Route path="media-kit" element={<MediaKit />} />
+              <Route path="settings" element={<SettingsPage />} />
+            </Route>
+
+            <Route path="*" element={<NotFound />} />
+          </Routes>
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>

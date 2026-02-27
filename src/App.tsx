@@ -33,44 +33,44 @@ const isMainDomain =
   hostname === "teachingcreations.com" || hostname === "www.teachingcreations.com";
 
 const App = () => {
-  if (isMainDomain) {
-    return <ComingSoon />;
-  }
-
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <Routes>
-            {/* Public routes */}
-            <Route path="/" element={<Index />} />
-            <Route path="/cycle-of-thinking" element={<CycleOfThinking />} />
-            <Route path="/books" element={<Books />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/insights" element={<Insights />} />
-            <Route path="/contact" element={<Contact />} />
+          {isMainDomain ? (
+            <ComingSoon />
+          ) : (
+            <Routes>
+              {/* Public routes */}
+              <Route path="/" element={<Index />} />
+              <Route path="/cycle-of-thinking" element={<CycleOfThinking />} />
+              <Route path="/books" element={<Books />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/insights" element={<Insights />} />
+              <Route path="/contact" element={<Contact />} />
 
-            {/* Admin routes */}
-            <Route path="/admin/login" element={<Login />} />
-            <Route path="/admin" element={<AdminLayout />}>
-              <Route index element={<Dashboard />} />
-              <Route path="content" element={<ContentManager />} />
-              <Route path="insights" element={<InsightsList />} />
-              <Route path="insights/:id" element={<InsightEditor />} />
-              <Route path="books" element={<BooksList />} />
-              <Route path="books/:id" element={<BookEditor />} />
-              <Route path="sales" element={<SalesAnalytics />} />
-              <Route path="audience" element={<AudienceList />} />
-              <Route path="pd-requests" element={<PdRequestsList />} />
-              <Route path="testimonials" element={<TestimonialsList />} />
-              <Route path="media-kit" element={<MediaKit />} />
-              <Route path="settings" element={<SettingsPage />} />
-            </Route>
+              {/* Admin routes */}
+              <Route path="/admin/login" element={<Login />} />
+              <Route path="/admin" element={<AdminLayout />}>
+                <Route index element={<Dashboard />} />
+                <Route path="content" element={<ContentManager />} />
+                <Route path="insights" element={<InsightsList />} />
+                <Route path="insights/:id" element={<InsightEditor />} />
+                <Route path="books" element={<BooksList />} />
+                <Route path="books/:id" element={<BookEditor />} />
+                <Route path="sales" element={<SalesAnalytics />} />
+                <Route path="audience" element={<AudienceList />} />
+                <Route path="pd-requests" element={<PdRequestsList />} />
+                <Route path="testimonials" element={<TestimonialsList />} />
+                <Route path="media-kit" element={<MediaKit />} />
+                <Route path="settings" element={<SettingsPage />} />
+              </Route>
 
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          )}
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>

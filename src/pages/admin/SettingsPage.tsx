@@ -3,17 +3,19 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
 import { toast } from "@/hooks/use-toast";
-import { Save, Shield, Palette, Link2, Users, Trash2 } from "lucide-react";
+import { Save, Shield, Palette, Link2, Users, Trash2, BookOpen } from "lucide-react";
+import ChapterSettings from "@/components/admin/ChapterSettings";
 import type { Tables } from "@/integrations/supabase/types";
 
 type UserRole = Tables<"user_roles">;
 
 const SettingsPage = () => {
-  const [activeTab, setActiveTab] = useState("general");
+  const [activeTab, setActiveTab] = useState("chapter");
   const { user } = useAuth();
   const queryClient = useQueryClient();
 
   const tabs = [
+    { key: "chapter", label: "Chapter", icon: BookOpen },
     { key: "general", label: "General", icon: Palette },
     { key: "integrations", label: "Integrations", icon: Link2 },
     { key: "users", label: "User Roles", icon: Users },
@@ -46,6 +48,7 @@ const SettingsPage = () => {
         })}
       </div>
 
+      {activeTab === "chapter" && <ChapterSettings />}
       {activeTab === "general" && <GeneralSettings />}
       {activeTab === "integrations" && <IntegrationsSettings />}
       {activeTab === "users" && <UserRolesSettings />}

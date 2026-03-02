@@ -3,13 +3,14 @@ import FadeIn from "@/components/FadeIn";
 import TriangleDiagram from "@/components/TriangleDiagram";
 
 const FrameworkSection = () => (
-  <section className="py-20">
+  <section className="py-16">
     <div className="container mx-auto px-6 lg:px-8 text-center">
       <FadeIn>
         <h2 className="text-3xl md:text-4xl font-serif mb-3">The Cycle of Thinking™</h2>
         <p className="text-base text-muted-foreground max-w-xl mx-auto font-sans leading-relaxed mb-10">
-          A structural model that makes cognitive development explicit — so educators can see,
-          measure, and cultivate independent thinking.
+          An integrative framework that organizes strategies often taught in isolation — giving
+          educators a coherent structure for developing thinking processes that transfer across
+          subjects and contexts.
         </p>
       </FadeIn>
       <FadeIn delay={0.1} className="flex justify-center mb-10">
@@ -37,7 +38,6 @@ const FrameworkSection = () => (
           </div>
         </div>
 
-        {/* Classroom vignette */}
         <div className="max-w-2xl mx-auto bg-secondary p-6 text-left mb-8">
           <p className="text-xs tracking-widest uppercase text-accent mb-2 font-sans font-medium">
             In the Classroom

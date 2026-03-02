@@ -1,3 +1,4 @@
+import { PrefixedLink as Link } from "@/contexts/PathPrefixContext";
 import FadeIn from "@/components/FadeIn";
 import TriangleDiagram from "@/components/TriangleDiagram";
 
@@ -45,6 +46,16 @@ const FrameworkSection = () => (
             constructing meaning. The Cycle of Thinking™ revealed the gap: Strategic Access
             was present, but Structured Expression had never been developed."
           </p>
+        </div>
+      </FadeIn>
+      <FadeIn delay={0.3}>
+        <div className="text-center mt-12">
+          <Link
+            to="/contact"
+            className="inline-flex items-center px-8 py-3.5 border border-foreground text-foreground text-sm font-medium tracking-widest uppercase transition-colors hover:bg-foreground hover:text-background"
+          >
+            Request Professional Development
+          </Link>
         </div>
       </FadeIn>
     </div>

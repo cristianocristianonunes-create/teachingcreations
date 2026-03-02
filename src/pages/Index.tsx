@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import HeroSection from "@/components/sections/HeroSection";
+import InstitutionalProofStrip from "@/components/sections/InstitutionalProofStrip";
 import ProblemSection from "@/components/sections/ProblemSection";
 import FrameworkSection from "@/components/sections/FrameworkSection";
 import BooksSection from "@/components/sections/BooksSection";
@@ -15,6 +16,7 @@ const Index = () => {
   return (
     <Layout>
       <HeroSection />
+      <InstitutionalProofStrip />
       <ProblemSection />
       <FrameworkSection />
       <BooksSection />

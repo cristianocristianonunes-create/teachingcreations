@@ -31,8 +31,14 @@ const BooksSection = () => (
               <p className="text-xs text-primary font-medium mb-3 font-sans">
                 Available on Amazon · Paperback and Kindle
               </p>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-3 font-sans">
+                This book presents a practical, coherent framework for designing literacy instruction that is accessible, rigorous, and sustainable.
+              </p>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-3 font-sans">
+                Grounded in research and classroom experience, it guides educators to build purposeful reading experiences and teach vocabulary and academic language explicitly.
+              </p>
               <p className="text-sm text-muted-foreground leading-relaxed mb-4 font-sans">
-                This book presents a practical, coherent framework for designing literacy instruction that is accessible, rigorous, and sustainable. Grounded in research and classroom experience, it guides educators to build purposeful reading experiences, teach vocabulary and academic language explicitly, and move from reading interaction to meaningful writing.
+                Move from reading interaction to meaningful writing — with coherence across every instructional layer.
               </p>
               <p className="text-xs text-muted-foreground/70 mb-5 font-sans">
                 For educators working with multilingual learners across content areas.

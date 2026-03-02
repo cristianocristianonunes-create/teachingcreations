@@ -1,7 +1,7 @@
 import FadeIn from "@/components/FadeIn";
 
 const ClosingSection = () => (
-  <section className="pt-28 pb-24 bg-foreground mt-8">
+  <section className="pt-36 pb-24 bg-foreground mt-8">
     <div className="container mx-auto px-6 lg:px-8 text-center">
       <FadeIn>
         <h2 className="text-3xl md:text-4xl font-serif text-background leading-snug mb-2">

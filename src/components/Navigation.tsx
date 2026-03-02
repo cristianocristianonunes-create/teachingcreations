@@ -9,6 +9,7 @@ const navLinks = [
   { label: "The Cycle of Thinking™", path: "/cycle-of-thinking" },
   { label: "Books", path: "/books" },
   { label: "About Erika", path: "/about" },
+  { label: "Evidence", path: "/evidence" },
   { label: "Insights", path: "/insights" },
   { label: "Contact", path: "/contact" },
 ];

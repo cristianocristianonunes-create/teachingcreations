@@ -1,5 +1,6 @@
 import FadeIn from "@/components/FadeIn";
 import bookCover from "@/assets/book-cover.png";
+import erikaAuthority from "@/assets/erika-authority.jpg";
 
 const HeroSection = () => (
   <section className="min-h-[75vh] flex items-center">
@@ -45,13 +46,21 @@ const HeroSection = () => (
         </blockquote>
       </FadeIn>
       <FadeIn delay={0.2} className="flex justify-center">
-        <div className="relative">
-          <div className="absolute -inset-4 bg-primary/5 -rotate-3" />
+        <div className="relative flex flex-col items-center gap-6">
           <img
-            src={bookCover}
-            alt="Teaching Reading and Writing to Multilingual Learners — book cover"
-            className="relative z-10 w-72 md:w-80 h-auto object-contain shadow-2xl"
+            src={erikaAuthority}
+            alt="Dr. Erika Sun, educator and developer of The Cycle of Thinking framework"
+            className="relative z-10 w-56 md:w-64 h-auto object-cover aspect-[4/5] shadow-lg"
+            loading="eager"
           />
+          <div className="relative">
+            <div className="absolute -inset-4 bg-primary/5 -rotate-3" />
+            <img
+              src={bookCover}
+              alt="Teaching Reading and Writing to Multilingual Learners — book cover"
+              className="relative z-10 w-52 md:w-60 h-auto object-contain shadow-2xl"
+            />
+          </div>
         </div>
       </FadeIn>
     </div>

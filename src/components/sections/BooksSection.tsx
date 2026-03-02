@@ -36,12 +36,14 @@ const BooksSection = () => (
                 For educators working with multilingual learners across content areas.
               </p>
               <div className="flex flex-wrap gap-3 justify-center md:justify-start">
-                <Link
-                  to="/books"
+                <a
+                  href="https://a.co/d/05pVmQSf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-6 py-2.5 bg-primary text-primary-foreground text-xs font-medium tracking-widest uppercase hover:opacity-90 transition-opacity"
                 >
-                  Purchase
-                </Link>
+                  Purchase on Amazon
+                </a>
                 <a
                   href="#email-capture"
                   className="px-6 py-2.5 border border-border text-foreground text-xs font-medium tracking-widest uppercase hover:bg-muted transition-colors"

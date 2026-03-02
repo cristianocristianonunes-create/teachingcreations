@@ -3,7 +3,7 @@ import bookCover from "@/assets/book-cover.png";
 import erikaAuthority from "@/assets/erika-authority.jpg";
 
 const HeroSection = () => (
-  <section className="min-h-[75vh] flex items-center pt-28 sm:pt-32">
+  <section className="min-h-[75vh] flex items-center pt-24">
     <div className="container mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
       <FadeIn>
         <p className="text-xs tracking-widest uppercase text-accent font-sans font-medium mb-3">

@@ -12,6 +12,7 @@ import About from "./pages/About";
 import Insights from "./pages/Insights";
 import Contact from "./pages/Contact";
 import Evidence from "./pages/Evidence";
+import ProfessionalDevelopmentFeedback from "./pages/ProfessionalDevelopmentFeedback";
 import NotFound from "./pages/NotFound";
 import Login from "./pages/admin/Login";
 import AdminLayout from "./components/admin/AdminLayout";
@@ -66,6 +67,7 @@ const App = () => {
             <Route path="/insights" element={<Insights />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/evidence" element={<Evidence />} />
+            <Route path="/professional-development-feedback" element={<ProfessionalDevelopmentFeedback />} />
 
             {/* Admin routes */}
             <Route path="/admin/login" element={<Login />} />

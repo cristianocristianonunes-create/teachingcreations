@@ -34,20 +34,20 @@ const quotes = [
 ];
 
 const SocialProofSection = () => (
-  <section className="py-16 bg-secondary">
+  <section className="py-20 md:py-24 bg-secondary">
     <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
       <FadeIn>
         <p className="text-xs tracking-widest uppercase text-accent mb-3 font-sans font-medium text-center">
           Educator Feedback — Collected Across Four Semesters
         </p>
-        <h2 className="text-3xl md:text-4xl font-serif mb-10 text-center">
+        <h2 className="text-3xl md:text-4xl font-serif mb-12 text-center">
           What Educators Are Saying
         </h2>
       </FadeIn>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
         {quotes.map((q, i) => (
           <FadeIn key={i} delay={i * 0.07}>
-            <blockquote className="bg-background p-6 h-full flex flex-col justify-between border border-border">
+            <blockquote className="bg-background p-7 h-full flex flex-col justify-between border border-border">
               <p className="text-sm text-foreground leading-relaxed font-sans italic mb-4">
                 "{q.text}"
               </p>

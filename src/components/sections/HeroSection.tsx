@@ -54,19 +54,19 @@ const HeroSection = () => {
               Buy the Book
             </a>
           </div>
-          <blockquote className="mt-10 border-l-2 border-primary/20 pl-4 max-w-lg">
-            <p className="text-[13px] text-muted-foreground leading-relaxed font-sans italic">
+          <blockquote className="mt-14 border-l-2 border-primary/20 pl-4 max-w-md">
+            <p className="text-xs text-muted-foreground/80 leading-relaxed font-sans italic">
               "{shortQuote}"
             </p>
             <button
               onClick={() => setShowFullQuote(true)}
-              className="text-[11px] text-primary font-sans mt-1.5 hover:underline underline-offset-2"
+              className="text-[10px] text-primary/70 font-sans mt-1.5 hover:underline underline-offset-2"
             >
               Read full testimonial
             </button>
             <footer className="mt-2">
-              <p className="text-xs font-medium text-foreground/80 font-sans">Alice Anyam</p>
-              <p className="text-xs text-muted-foreground/60 font-sans">ELD High School Classroom Teacher</p>
+              <p className="text-[11px] font-medium text-foreground/70 font-sans">Alice Anyam</p>
+              <p className="text-[11px] text-muted-foreground/50 font-sans">ELD High School Classroom Teacher</p>
             </footer>
           </blockquote>
         </FadeIn>

@@ -1,4 +1,3 @@
-import { PrefixedLink as Link } from "@/contexts/PathPrefixContext";
 import FadeIn from "@/components/FadeIn";
 import TriangleDiagram from "@/components/TriangleDiagram";
 
@@ -38,7 +37,7 @@ const FrameworkSection = () => (
           </div>
         </div>
 
-        <div className="max-w-2xl mx-auto bg-secondary p-6 text-left mb-8">
+        <div className="max-w-2xl mx-auto bg-secondary p-6 text-left">
           <p className="text-xs tracking-widest uppercase text-accent mb-2 font-sans font-medium">
             In the Classroom
           </p>
@@ -49,13 +48,6 @@ const FrameworkSection = () => (
             was present, but Structured Expression had never been developed."
           </p>
         </div>
-
-        <Link
-          to="/cycle-of-thinking"
-          className="inline-flex items-center text-sm text-primary font-medium tracking-widest uppercase hover:underline underline-offset-4"
-        >
-          Explore the Full Framework →
-        </Link>
       </FadeIn>
     </div>
   </section>

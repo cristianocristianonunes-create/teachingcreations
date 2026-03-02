@@ -122,6 +122,27 @@ export type Database = {
         }
         Relationships: []
       }
+      free_chapter_interest: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          name: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          name: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          name?: string
+        }
+        Relationships: []
+      }
       insights: {
         Row: {
           category: string | null

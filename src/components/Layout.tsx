@@ -1,34 +1,7 @@
 import { PrefixedLink as Link } from "@/contexts/PathPrefixContext";
 import Navigation from "./Navigation";
-import { useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
-import { toast } from "sonner";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
-  const [footerEmail, setFooterEmail] = useState("");
-  const [loading, setLoading] = useState(false);
-
-  const handleNewsletterSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!footerEmail.trim()) return;
-    setLoading(true);
-    try {
-      const { error } = await supabase.from("contacts").insert({
-        name: "Newsletter Subscriber",
-        email: footerEmail.trim(),
-        source: "footer_newsletter",
-        interest_type: "newsletter",
-      });
-      if (error) throw error;
-      toast.success("Subscribed! Welcome aboard.");
-      setFooterEmail("");
-    } catch {
-      toast.error("Something went wrong. Please try again.");
-    } finally {
-      setLoading(false);
-    }
-  };
-
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />
@@ -67,29 +40,18 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               ))}
             </div>
 
-            {/* Newsletter */}
+            {/* Chapter CTA */}
             <div>
-              <p className="text-xs tracking-widest uppercase text-background/40 mb-3 font-sans font-medium">Stay Updated</p>
+              <p className="text-xs tracking-widest uppercase text-background/40 mb-3 font-sans font-medium">Free Resource</p>
               <p className="text-sm text-background/60 font-sans leading-relaxed mb-3">
-                Receive insights on making thinking visible in your classroom.
+                Be notified when Chapter One is released.
               </p>
-              <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
-                <input
-                  type="email"
-                  placeholder="Your email"
-                  required
-                  value={footerEmail}
-                  onChange={(e) => setFooterEmail(e.target.value)}
-                  className="flex-1 px-3 py-2 bg-background/10 border border-background/20 text-background text-sm font-sans focus:outline-none focus:ring-1 focus:ring-accent placeholder:text-background/40"
-                />
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="px-4 py-2 bg-accent text-accent-foreground text-xs font-medium tracking-widest uppercase hover:opacity-90 transition-opacity disabled:opacity-50"
-                >
-                  {loading ? "…" : "Join"}
-                </button>
-              </form>
+              <a
+                href="#email-capture"
+                className="inline-flex px-5 py-2.5 bg-accent text-accent-foreground text-xs font-medium tracking-widest uppercase hover:opacity-90 transition-opacity"
+              >
+                Get Chapter One Free
+              </a>
             </div>
           </div>
 

@@ -14,7 +14,7 @@ const ClosingSection = () => (
           href="#email-capture"
           className="inline-flex items-center px-8 py-3.5 bg-background text-foreground text-sm font-medium tracking-widest uppercase hover:opacity-90 transition-opacity"
         >
-          Download a Free Chapter
+          Get Chapter One
         </a>
       </FadeIn>
     </div>

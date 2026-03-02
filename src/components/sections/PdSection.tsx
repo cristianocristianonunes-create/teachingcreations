@@ -2,9 +2,9 @@ import { PrefixedLink as Link } from "@/contexts/PathPrefixContext";
 import FadeIn from "@/components/FadeIn";
 
 const outcomes = [
-  "Coherent planning across reading, writing, and vocabulary",
-  "Immediate classroom application within the same week",
-  "Support for multilingual learners without reducing rigor",
+  "Coherent literacy planning across reading, writing, and vocabulary",
+  "Immediate classroom application within the same instructional cycle",
+  "Rigorous multilingual learner support without lowering expectations",
 ];
 
 const PdSection = () => (
@@ -18,8 +18,8 @@ const PdSection = () => (
           Bring The Cycle of Thinking™ to Your School
         </h2>
         <p className="text-sm text-muted-foreground font-sans leading-relaxed mb-4">
-          Customized sessions designed to help your team make thinking
-          visible — across content areas, grade levels, and language backgrounds.
+          Customized professional development designed for schools and districts seeking
+          coherent literacy instruction aligned to multilingual learner needs.
         </p>
         <ul className="text-sm text-muted-foreground font-sans leading-relaxed mb-6 space-y-1.5 inline-block text-left">
           {outcomes.map((o) => (

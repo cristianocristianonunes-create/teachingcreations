@@ -27,10 +27,9 @@ const AuthorStorySection = () => (
             proficiency coaching to literacy instruction and teacher development.
           </p>
           <p>
-            The Cycle of Thinking™ emerged gradually — shaped through years of designing
-            instruction and coaching educators toward greater coherence. Developed through
-            years of classroom practice and professional learning with educators, it is the
-            formalization of a thinking process discovered through practice.
+            The framework formalizes a thinking process refined through decades of instructional
+            design and educator coaching. The Cycle of Thinking™ emerged gradually — shaped
+            through years of designing instruction and coaching educators toward greater coherence.
           </p>
         </div>
         <Link

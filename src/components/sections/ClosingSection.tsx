@@ -14,7 +14,7 @@ const ClosingSection = () => (
           href="#email-capture"
           className="inline-flex items-center px-8 py-3.5 bg-background text-foreground text-sm font-medium tracking-widest uppercase hover:opacity-90 transition-opacity"
         >
-          Get Chapter One
+          Be Notified When Chapter One Is Released
         </a>
       </FadeIn>
     </div>

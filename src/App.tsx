@@ -11,6 +11,7 @@ import Books from "./pages/Books";
 import About from "./pages/About";
 import Insights from "./pages/Insights";
 import Contact from "./pages/Contact";
+import Evidence from "./pages/Evidence";
 import NotFound from "./pages/NotFound";
 import Login from "./pages/admin/Login";
 import AdminLayout from "./components/admin/AdminLayout";
@@ -56,6 +57,7 @@ const App = () => {
             <Route path="/teste/about" element={<TestePrefix><About /></TestePrefix>} />
             <Route path="/teste/insights" element={<TestePrefix><Insights /></TestePrefix>} />
             <Route path="/teste/contact" element={<TestePrefix><Contact /></TestePrefix>} />
+            <Route path="/teste/evidence" element={<TestePrefix><Evidence /></TestePrefix>} />
 
             {/* Standard routes (always accessible) */}
             <Route path="/cycle-of-thinking" element={<CycleOfThinking />} />
@@ -63,6 +65,7 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/insights" element={<Insights />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/evidence" element={<Evidence />} />
 
             {/* Admin routes */}
             <Route path="/admin/login" element={<Login />} />

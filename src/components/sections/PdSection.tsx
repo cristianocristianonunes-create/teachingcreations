@@ -12,8 +12,9 @@ const PdSection = () => (
           Bring The Cycle of Thinking™ to Your School
         </h2>
         <p className="text-sm text-muted-foreground font-sans leading-relaxed mb-6">
-          Customized professional development sessions designed to help your entire team
-          make thinking visible — across content areas, grade levels, and language backgrounds.
+          Developed through years of classroom practice and professional learning with
+          educators. Customized sessions designed to help your team make thinking
+          visible — across content areas, grade levels, and language backgrounds.
         </p>
         <Link
           to="/contact"

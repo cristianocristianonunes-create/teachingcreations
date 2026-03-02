@@ -27,14 +27,10 @@ const AuthorStorySection = () => (
             proficiency coaching to literacy instruction and teacher development.
           </p>
           <p>
-            A consistent pattern emerged: learning improved when thinking processes became
-            visible — not just to the teacher, but to the learner. The Cycle of Thinking™
-            was not designed as theory. It emerged gradually, shaped through years of designing
-            instruction and coaching educators toward greater coherence.
-          </p>
-          <p>
-            It is the formalization of a thinking process discovered through practice — not
-            invented for promotion.
+            The Cycle of Thinking™ emerged gradually — shaped through years of designing
+            instruction and coaching educators toward greater coherence. Developed through
+            years of classroom practice and professional learning with educators, it is the
+            formalization of a thinking process discovered through practice.
           </p>
         </div>
         <Link

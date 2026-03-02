@@ -5,7 +5,8 @@ import FrameworkSection from "@/components/sections/FrameworkSection";
 import BooksSection from "@/components/sections/BooksSection";
 import AuthorStorySection from "@/components/sections/AuthorStorySection";
 import VideoSection from "@/components/sections/VideoSection";
-import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import SocialProofSection from "@/components/sections/SocialProofSection";
+import InstitutionalEvidenceSection from "@/components/sections/InstitutionalEvidenceSection";
 import PdSection from "@/components/sections/PdSection";
 import EmailCaptureSection from "@/components/sections/EmailCaptureSection";
 import ClosingSection from "@/components/sections/ClosingSection";
@@ -19,7 +20,8 @@ const Index = () => {
       <BooksSection />
       <AuthorStorySection />
       <VideoSection />
-      <TestimonialsSection />
+      <SocialProofSection />
+      <InstitutionalEvidenceSection />
       <PdSection />
       <EmailCaptureSection />
       <ClosingSection />

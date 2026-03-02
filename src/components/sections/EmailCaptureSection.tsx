@@ -36,11 +36,11 @@ const EmailCaptureSection = () => {
       <div className="container mx-auto px-6 lg:px-8 max-w-xl text-center">
         <FadeIn>
           <h2 className="text-3xl md:text-4xl font-serif mb-2">
-            Download a Free Chapter
+            Download Chapter One Free
           </h2>
           <p className="text-sm text-muted-foreground font-sans leading-relaxed mb-2">
-            Get Chapter One of Strategic Access and discover how to design intentional
-            cognitive entry points for your students.
+            Get Chapter One of <em>Teaching Reading and Writing to Multilingual Learners</em> and
+            discover how to design intentional cognitive entry points for your students.
           </p>
           <p className="text-xs text-primary font-medium font-sans mb-6">
             Join educators already applying the framework.

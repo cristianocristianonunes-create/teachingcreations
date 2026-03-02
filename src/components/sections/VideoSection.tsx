@@ -3,7 +3,7 @@ import VideoWithPoster from "@/components/VideoWithPoster";
 import vslVideo from "@/assets/vsl-video.mp4";
 
 const VideoSection = () => (
-  <section className="py-20 bg-secondary">
+  <section className="py-20 bg-secondary" id="video">
     <div className="container mx-auto px-6 lg:px-8 max-w-3xl text-center">
       <FadeIn>
         <h2 className="text-2xl md:text-3xl font-serif mb-3">

@@ -1,4 +1,3 @@
-import { PrefixedLink as Link } from "@/contexts/PathPrefixContext";
 import FadeIn from "@/components/FadeIn";
 
 const ClosingSection = () => (
@@ -11,12 +10,12 @@ const ClosingSection = () => (
         <p className="text-3xl md:text-4xl font-serif italic text-accent mb-8">
           We design them visibly.
         </p>
-        <Link
-          to="/books"
+        <a
+          href="#email-capture"
           className="inline-flex items-center px-8 py-3.5 bg-background text-foreground text-sm font-medium tracking-widest uppercase hover:opacity-90 transition-opacity"
         >
-          Start with the Books
-        </Link>
+          Download a Free Chapter
+        </a>
       </FadeIn>
     </div>
   </section>

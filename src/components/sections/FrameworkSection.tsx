@@ -2,24 +2,22 @@ import FadeIn from "@/components/FadeIn";
 import TriangleDiagram from "@/components/TriangleDiagram";
 
 const FrameworkSection = () => (
-  <section className="py-16">
+  <section className="py-20 md:py-24">
     <div className="container mx-auto px-6 lg:px-8 text-center">
       <FadeIn>
         <h2 className="text-3xl md:text-4xl font-serif mb-3">The Cycle of Thinking™</h2>
-        <p className="text-xs text-primary/70 font-sans tracking-wide mb-3">
+        <p className="text-sm text-primary/70 font-sans tracking-wide max-w-2xl mx-auto leading-relaxed mb-10">
           A proprietary instructional framework integrating access, articulation, and autonomy into a coherent literacy design model.
         </p>
-        <p className="text-base text-muted-foreground max-w-xl mx-auto font-sans leading-relaxed mb-10">
-          An integrative framework that organizes strategies often taught in isolation — giving
-          educators a coherent structure for developing thinking processes that transfer across
-          subjects and contexts.
+      </FadeIn>
+      <FadeIn delay={0.1} className="flex flex-col items-center mb-12">
+        <TriangleDiagram />
+        <p className="text-xs text-muted-foreground/50 font-sans mt-4 italic">
+          The structural architecture of The Cycle of Thinking™.
         </p>
       </FadeIn>
-      <FadeIn delay={0.1} className="flex justify-center mb-10">
-        <TriangleDiagram />
-      </FadeIn>
       <FadeIn delay={0.2}>
-        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto text-left mb-10">
+        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto text-left mt-6 mb-10">
           <div>
             <h3 className="font-serif text-primary mb-2">Strategic Access™</h3>
             <p className="text-sm text-muted-foreground leading-relaxed font-sans">

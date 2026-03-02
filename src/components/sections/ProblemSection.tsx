@@ -16,7 +16,7 @@ const problems = [
 ];
 
 const ProblemSection = () => (
-  <section className="py-16">
+  <section className="py-20 md:py-24">
     <div className="container mx-auto px-6 lg:px-8">
       <FadeIn>
         <h2 className="text-3xl md:text-4xl font-serif text-center mb-3">

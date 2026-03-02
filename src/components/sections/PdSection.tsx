@@ -8,7 +8,7 @@ const outcomes = [
 ];
 
 const PdSection = () => (
-  <section className="py-14 bg-secondary">
+  <section className="py-20 md:py-24 bg-secondary">
     <div className="container mx-auto px-6 lg:px-8 max-w-2xl text-center">
       <FadeIn>
         <p className="text-xs tracking-widest uppercase text-accent mb-3 font-sans font-medium">

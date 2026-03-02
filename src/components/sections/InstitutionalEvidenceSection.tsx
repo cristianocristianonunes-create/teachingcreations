@@ -24,7 +24,7 @@ const patterns = [
 ];
 
 const InstitutionalEvidenceSection = () => (
-  <section className="py-16">
+  <section className="py-20 md:py-24">
     <div className="container mx-auto px-6 lg:px-8 max-w-3xl">
       <FadeIn>
         <p className="text-xs tracking-widest uppercase text-accent mb-3 font-sans font-medium">

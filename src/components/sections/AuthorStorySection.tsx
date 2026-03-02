@@ -1,0 +1,51 @@
+import { PrefixedLink as Link } from "@/contexts/PathPrefixContext";
+import FadeIn from "@/components/FadeIn";
+import portrait from "@/assets/erika-portrait.jpg";
+
+const AuthorStorySection = () => (
+  <section className="py-16 bg-secondary">
+    <div className="container mx-auto px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center max-w-4xl">
+      <FadeIn>
+        <img
+          src={portrait}
+          alt="Erika Sun — Educator and Framework Developer"
+          className="w-full max-w-xs mx-auto object-cover aspect-[4/5] shadow-lg"
+        />
+      </FadeIn>
+      <FadeIn delay={0.15}>
+        <p className="text-xs tracking-widest uppercase text-accent mb-3 font-sans font-medium">
+          The Story Behind the Framework
+        </p>
+        <h2 className="text-3xl md:text-4xl font-serif mb-1">Erika Sun</h2>
+        <p className="text-sm text-primary font-medium font-sans mb-4">
+          Educator · Framework Developer · Teaching Since 1997
+        </p>
+        <div className="space-y-3 text-sm text-muted-foreground leading-relaxed font-sans">
+          <p>
+            Erika Sun began teaching professionally at 16. Across nearly three decades, her
+            work has spanned children, adolescents, adults, and multilingual learners — from
+            proficiency coaching to literacy instruction and teacher development.
+          </p>
+          <p>
+            A consistent pattern emerged: learning improved when thinking processes became
+            visible — not just to the teacher, but to the learner. The Cycle of Thinking™
+            was not designed as theory. It emerged gradually, shaped through years of designing
+            instruction and coaching educators toward greater coherence.
+          </p>
+          <p>
+            It is the formalization of a thinking process discovered through practice — not
+            invented for promotion.
+          </p>
+        </div>
+        <Link
+          to="/about"
+          className="inline-flex items-center mt-5 text-sm text-primary font-medium tracking-widest uppercase hover:underline underline-offset-4"
+        >
+          Read Full Biography →
+        </Link>
+      </FadeIn>
+    </div>
+  </section>
+);
+
+export default AuthorStorySection;

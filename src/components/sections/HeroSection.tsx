@@ -22,6 +22,9 @@ const HeroSection = () => {
     <section className="min-h-[75vh] flex items-center pt-24">
       <div className="container mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
         <FadeIn>
+          <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground/60 font-sans mb-4">
+            An Instructional Design Framework for Multilingual Literacy
+          </p>
           <p className="text-xs tracking-widest uppercase text-accent font-sans font-medium mb-3">
             For K–12 educators working with multilingual learners
           </p>

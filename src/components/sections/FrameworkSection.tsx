@@ -6,6 +6,9 @@ const FrameworkSection = () => (
     <div className="container mx-auto px-6 lg:px-8 text-center">
       <FadeIn>
         <h2 className="text-3xl md:text-4xl font-serif mb-3">The Cycle of Thinking™</h2>
+        <p className="text-xs text-primary/70 font-sans tracking-wide mb-3">
+          A proprietary instructional framework integrating access, articulation, and autonomy into a coherent literacy design model.
+        </p>
         <p className="text-base text-muted-foreground max-w-xl mx-auto font-sans leading-relaxed mb-10">
           An integrative framework that organizes strategies often taught in isolation — giving
           educators a coherent structure for developing thinking processes that transfer across

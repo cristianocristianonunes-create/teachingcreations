@@ -35,18 +35,21 @@ const Books = () => {
                 <p className="text-sm text-muted-foreground mb-6 font-sans">
                   <span className="font-medium text-foreground">Intended reader:</span> Educators working with multilingual learners, curriculum designers, and instructional coaches seeking research-informed strategies for deeper comprehension.
                 </p>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap items-center gap-4">
                   <a
                     href="https://a.co/d/05pVmQSf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-2.5 bg-primary text-primary-foreground text-xs font-medium tracking-widest uppercase hover:opacity-90 transition-opacity"
+                    className="px-6 py-2.5 border border-foreground text-foreground text-xs font-medium tracking-widest uppercase transition-colors hover:bg-foreground hover:text-background"
                   >
                     Purchase on Amazon
                   </a>
-                  <button className="px-6 py-2.5 border border-border text-foreground text-xs font-medium tracking-widest uppercase hover:bg-muted transition-colors">
-                    Sample Chapter
-                  </button>
+                  <a
+                    href="/#email-capture"
+                    className="text-xs text-primary/80 font-sans hover:underline underline-offset-2"
+                  >
+                    Get Chapter One →
+                  </a>
                 </div>
               </div>
             </div>

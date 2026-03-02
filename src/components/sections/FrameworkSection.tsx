@@ -12,9 +12,6 @@ const FrameworkSection = () => (
       </FadeIn>
       <FadeIn delay={0.1} className="flex flex-col items-center mb-12">
         <TriangleDiagram />
-        <p className="text-xs text-muted-foreground/50 font-sans mt-4 italic">
-          The structural architecture of The Cycle of Thinking™.
-        </p>
       </FadeIn>
       <FadeIn delay={0.2}>
         <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto text-left mt-6 mb-10">

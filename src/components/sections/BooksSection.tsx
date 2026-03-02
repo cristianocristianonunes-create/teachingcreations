@@ -37,7 +37,7 @@ const BooksSection = () => (
               <p className="text-xs text-muted-foreground/70 mb-5 font-sans">
                 For educators working with multilingual learners across content areas.
               </p>
-              <div className="flex flex-wrap gap-3 justify-center md:justify-start">
+              <div className="flex flex-col items-center md:items-start gap-2">
                 <a
                   href="https://a.co/d/05pVmQSf"
                   target="_blank"
@@ -48,9 +48,9 @@ const BooksSection = () => (
                 </a>
                 <a
                   href="#email-capture"
-                  className="px-6 py-2.5 border border-border text-foreground text-xs font-medium tracking-widest uppercase hover:bg-muted transition-colors"
+                  className="text-xs text-primary/80 font-sans hover:underline underline-offset-2 mt-1"
                 >
-                  Free Chapter
+                  Get notified when Chapter One is available →
                 </a>
               </div>
             </div>

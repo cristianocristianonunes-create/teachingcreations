@@ -64,7 +64,7 @@ const EmailCaptureSection = () => {
           <p className="text-sm text-muted-foreground font-sans leading-relaxed mb-2">
             {isDraft
               ? "Chapter One will be available soon. Join the list to receive it as soon as it is released."
-              : "Get Chapter One of Teaching Reading and Writing to Multilingual Learners and discover how to design intentional cognitive entry points for your students."}
+              : "Get Chapter One and discover how to design intentional cognitive entry points for multilingual literacy instruction."}
           </p>
           <p className="text-xs text-primary font-medium font-sans mb-6">
             {isDraft

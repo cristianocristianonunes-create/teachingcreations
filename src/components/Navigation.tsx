@@ -44,7 +44,7 @@ const Navigation = () => {
           <img
             src={logoIcon}
             alt="Teaching Creations"
-            className="h-10 w-10 lg:h-12 lg:w-12 object-contain"
+            className="h-14 w-14 lg:h-16 lg:w-16 object-contain"
           />
           <span className="font-serif text-base sm:text-lg lg:text-xl tracking-wide text-foreground">
             Teaching Creations

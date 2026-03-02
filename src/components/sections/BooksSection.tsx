@@ -1,4 +1,3 @@
-import { PrefixedLink as Link } from "@/contexts/PathPrefixContext";
 import FadeIn from "@/components/FadeIn";
 import bookCover from "@/assets/book-cover.png";
 
@@ -26,13 +25,16 @@ const BooksSection = () => (
               <h3 className="font-serif text-2xl mb-1">
                 Teaching Reading and Writing to Multilingual Learners
               </h3>
-              <p className="text-sm text-muted-foreground font-sans italic mb-3">
+              <p className="text-sm text-muted-foreground font-sans italic mb-1">
                 A Coherent Framework for Designing Literacy Instruction
+              </p>
+              <p className="text-xs text-primary font-medium mb-3 font-sans">
+                Available on Amazon · Paperback and Kindle
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed mb-4 font-sans">
                 This book presents a practical, coherent framework for designing literacy instruction that is accessible, rigorous, and sustainable. Grounded in research and classroom experience, it guides educators to build purposeful reading experiences, teach vocabulary and academic language explicitly, and move from reading interaction to meaningful writing.
               </p>
-              <p className="text-xs text-primary font-medium mb-5 font-sans">
+              <p className="text-xs text-muted-foreground/70 mb-5 font-sans">
                 For educators working with multilingual learners across content areas.
               </p>
               <div className="flex flex-wrap gap-3 justify-center md:justify-start">
@@ -52,6 +54,17 @@ const BooksSection = () => (
                 </a>
               </div>
             </div>
+          </div>
+        </FadeIn>
+        {/* Learn the framework — text link below the book */}
+        <FadeIn delay={0.1}>
+          <div className="text-center mt-8">
+            <a
+              href="/cycle-of-thinking"
+              className="text-sm text-primary font-medium hover:underline underline-offset-4 font-sans"
+            >
+              Learn the framework →
+            </a>
           </div>
         </FadeIn>
       </div>

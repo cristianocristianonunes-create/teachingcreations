@@ -50,8 +50,17 @@ const ProfessionalDevelopmentFeedback = () => {
   const onSubmit = async (data: FeedbackFormData) => {
     setSubmitting(true);
     try {
-      const { error } = await supabase.functions.invoke("send-pd-feedback", {
-        body: data,
+      const { error } = await supabase.from("pd_feedback").insert({
+        grade_level: data.gradeLevel,
+        educator_role: data.currentRole,
+        school_district: data.schoolDistrict || null,
+        aha_moment: data.ahaMoment,
+        strategy_implemented: data.strategyImplemented,
+        instructional_shift: data.instructionalShift,
+        student_impact: data.studentImpact,
+        would_recommend: data.wouldRecommend,
+        testimonial: data.testimonial || null,
+        consent_level: data.consentLevel,
       });
       if (error) throw error;
       setSubmitted(true);
@@ -82,7 +91,6 @@ const ProfessionalDevelopmentFeedback = () => {
   return (
     <div className="min-h-screen bg-background">
       <div className="max-w-2xl mx-auto px-6 py-20 md:py-28">
-        {/* Header */}
         <header className="text-center mb-16">
           <h1 className="font-serif text-3xl md:text-4xl text-foreground leading-snug mb-4">
             Professional Development Reflection
@@ -103,67 +111,45 @@ const ProfessionalDevelopmentFeedback = () => {
                 Professional Profile
               </h2>
               <div className="space-y-6">
-                <FormField
-                  control={form.control}
-                  name="gradeLevel"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-sm font-sans text-foreground">Grade Level</FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
-                        <FormControl>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select grade level" />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent>
-                          {["Elementary", "Middle", "High School", "Early College", "Administrator", "Other"].map((g) => (
-                            <SelectItem key={g} value={g}>{g}</SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                <FormField control={form.control} name="gradeLevel" render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-sm font-sans text-foreground">Grade Level</FormLabel>
+                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                      <FormControl><SelectTrigger><SelectValue placeholder="Select grade level" /></SelectTrigger></FormControl>
+                      <SelectContent>
+                        {["Elementary", "Middle", "High School", "Early College", "Administrator", "Other"].map((g) => (
+                          <SelectItem key={g} value={g}>{g}</SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                    <FormMessage />
+                  </FormItem>
+                )} />
 
-                <FormField
-                  control={form.control}
-                  name="currentRole"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-sm font-sans text-foreground">Current Role</FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
-                        <FormControl>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select your role" />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent>
-                          {["ELD Teacher", "Classroom/Content Teacher", "Administrator", "Instructional Coach", "Other"].map((r) => (
-                            <SelectItem key={r} value={r}>{r}</SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                <FormField control={form.control} name="currentRole" render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-sm font-sans text-foreground">Current Role</FormLabel>
+                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                      <FormControl><SelectTrigger><SelectValue placeholder="Select your role" /></SelectTrigger></FormControl>
+                      <SelectContent>
+                        {["ELD Teacher", "Classroom/Content Teacher", "Administrator", "Instructional Coach", "Other"].map((r) => (
+                          <SelectItem key={r} value={r}>{r}</SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                    <FormMessage />
+                  </FormItem>
+                )} />
 
-                <FormField
-                  control={form.control}
-                  name="schoolDistrict"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-sm font-sans text-foreground">
-                        School / District <span className="text-muted-foreground font-normal">(optional)</span>
-                      </FormLabel>
-                      <FormControl>
-                        <Input {...field} placeholder="e.g. Los Angeles Unified" />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                <FormField control={form.control} name="schoolDistrict" render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-sm font-sans text-foreground">
+                      School / District <span className="text-muted-foreground font-normal">(optional)</span>
+                    </FormLabel>
+                    <FormControl><Input {...field} placeholder="e.g. Los Angeles Unified" /></FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )} />
               </div>
             </section>
 
@@ -173,26 +159,19 @@ const ProfessionalDevelopmentFeedback = () => {
                 Instructional Experience
               </h2>
               <div className="space-y-8">
-                {[
+                {([
                   { name: "ahaMoment" as const, label: 'What was one "A-ha" moment during this training?' },
                   { name: "strategyImplemented" as const, label: "What strategy did you implement immediately?" },
                   { name: "instructionalShift" as const, label: "What instructional shift occurred in your planning?" },
                   { name: "studentImpact" as const, label: "What impact did this training have on your students?" },
-                ].map(({ name, label }) => (
-                  <FormField
-                    key={name}
-                    control={form.control}
-                    name={name}
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-sm font-sans text-foreground">{label}</FormLabel>
-                        <FormControl>
-                          <Textarea {...field} rows={4} className="resize-y" />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
+                ]).map(({ name, label }) => (
+                  <FormField key={name} control={form.control} name={name} render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-sm font-sans text-foreground">{label}</FormLabel>
+                      <FormControl><Textarea {...field} rows={4} className="resize-y" /></FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )} />
                 ))}
               </div>
             </section>
@@ -203,77 +182,48 @@ const ProfessionalDevelopmentFeedback = () => {
                 Public Testimonial
               </h2>
               <div className="space-y-8">
-                <FormField
-                  control={form.control}
-                  name="wouldRecommend"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-sm font-sans text-foreground">
-                        Would you recommend this training?
-                      </FormLabel>
-                      <FormControl>
-                        <RadioGroup
-                          onValueChange={field.onChange}
-                          defaultValue={field.value}
-                          className="flex flex-col gap-3 mt-2"
-                        >
-                          {["Yes", "With reservations", "No"].map((opt) => (
-                            <div key={opt} className="flex items-center gap-2">
-                              <RadioGroupItem value={opt} id={`recommend-${opt}`} />
-                              <Label htmlFor={`recommend-${opt}`} className="text-sm font-sans text-foreground cursor-pointer">
-                                {opt}
-                              </Label>
-                            </div>
-                          ))}
-                        </RadioGroup>
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                <FormField control={form.control} name="wouldRecommend" render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-sm font-sans text-foreground">Would you recommend this training?</FormLabel>
+                    <FormControl>
+                      <RadioGroup onValueChange={field.onChange} defaultValue={field.value} className="flex flex-col gap-3 mt-2">
+                        {["Yes", "With reservations", "No"].map((opt) => (
+                          <div key={opt} className="flex items-center gap-2">
+                            <RadioGroupItem value={opt} id={`recommend-${opt}`} />
+                            <Label htmlFor={`recommend-${opt}`} className="text-sm font-sans text-foreground cursor-pointer">{opt}</Label>
+                          </div>
+                        ))}
+                      </RadioGroup>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )} />
 
-                <FormField
-                  control={form.control}
-                  name="testimonial"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-sm font-sans text-foreground">
-                        Please share a short testimonial that may be used publicly.
-                      </FormLabel>
-                      <FormControl>
-                        <Textarea {...field} rows={4} className="resize-y" />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                <FormField control={form.control} name="testimonial" render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-sm font-sans text-foreground">Please share a short testimonial that may be used publicly.</FormLabel>
+                    <FormControl><Textarea {...field} rows={4} className="resize-y" /></FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )} />
 
-                <FormField
-                  control={form.control}
-                  name="consentLevel"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-sm font-sans text-foreground">Consent for publication</FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
-                        <FormControl>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select consent level" />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent>
-                          <SelectItem value="Full name and role">Full name and role</SelectItem>
-                          <SelectItem value="First name and role only">First name and role only</SelectItem>
-                          <SelectItem value="Anonymous">Anonymous</SelectItem>
-                        </SelectContent>
-                      </Select>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                <FormField control={form.control} name="consentLevel" render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-sm font-sans text-foreground">Consent for publication</FormLabel>
+                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                      <FormControl><SelectTrigger><SelectValue placeholder="Select consent level" /></SelectTrigger></FormControl>
+                      <SelectContent>
+                        <SelectItem value="Full name and role">Full name and role</SelectItem>
+                        <SelectItem value="First name and role only">First name and role only</SelectItem>
+                        <SelectItem value="Anonymous">Anonymous</SelectItem>
+                      </SelectContent>
+                    </Select>
+                    <FormMessage />
+                  </FormItem>
+                )} />
               </div>
             </section>
 
-            {/* Legal note */}
             <p className="text-xs text-muted-foreground/70 font-sans leading-relaxed">
               By submitting this reflection, you agree that your responses may be used for
               professional documentation and program evaluation. Testimonials will only be
@@ -281,11 +231,7 @@ const ProfessionalDevelopmentFeedback = () => {
             </p>
 
             <div className="text-center pt-4">
-              <Button
-                type="submit"
-                disabled={submitting}
-                className="px-10 py-3 text-xs tracking-widest uppercase font-medium"
-              >
+              <Button type="submit" disabled={submitting} className="px-10 py-3 text-xs tracking-widest uppercase font-medium">
                 {submitting ? "Submitting…" : "Submit Reflection"}
               </Button>
             </div>

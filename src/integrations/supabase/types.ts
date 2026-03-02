@@ -194,6 +194,51 @@ export type Database = {
         }
         Relationships: []
       }
+      pd_feedback: {
+        Row: {
+          aha_moment: string
+          consent_level: string
+          created_at: string
+          educator_role: string
+          grade_level: string
+          id: string
+          instructional_shift: string
+          school_district: string | null
+          strategy_implemented: string
+          student_impact: string
+          testimonial: string | null
+          would_recommend: string
+        }
+        Insert: {
+          aha_moment: string
+          consent_level: string
+          created_at?: string
+          educator_role: string
+          grade_level: string
+          id?: string
+          instructional_shift: string
+          school_district?: string | null
+          strategy_implemented: string
+          student_impact: string
+          testimonial?: string | null
+          would_recommend: string
+        }
+        Update: {
+          aha_moment?: string
+          consent_level?: string
+          created_at?: string
+          educator_role?: string
+          grade_level?: string
+          id?: string
+          instructional_shift?: string
+          school_district?: string | null
+          strategy_implemented?: string
+          student_impact?: string
+          testimonial?: string | null
+          would_recommend?: string
+        }
+        Relationships: []
+      }
       pd_requests: {
         Row: {
           contact_person: string

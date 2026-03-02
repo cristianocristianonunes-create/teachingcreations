@@ -15,6 +15,9 @@ const HeroSection = () => (
         <p className="mt-4 text-lg text-muted-foreground leading-relaxed max-w-lg font-sans">
           A practical framework for designing literacy instruction that develops independent thinkers — not just task completion.
         </p>
+        <p className="mt-3 text-xs text-muted-foreground/70 tracking-wide font-sans max-w-lg">
+          Developed through years of classroom practice and professional learning with K–12 educators.
+        </p>
         <div className="mt-8 flex flex-wrap gap-4">
           <a
             href="#email-capture"
@@ -31,6 +34,15 @@ const HeroSection = () => (
             Buy the Book
           </a>
         </div>
+        <blockquote className="mt-10 border-l-2 border-primary/20 pl-4 max-w-lg">
+          <p className="text-[13px] text-muted-foreground leading-relaxed font-sans italic">
+            "Dr. Erika Sun provided extraordinary support throughout the course. Her objectives were always clear, her materials carefully prepared, and her availability beyond class hours made a real difference. She combines deep expertise with patience, professionalism, and genuine respect for her students. Her teaching strategies are truly worth emulating."
+          </p>
+          <footer className="mt-2">
+            <p className="text-xs font-medium text-foreground/80 font-sans">Alice Anyam</p>
+            <p className="text-xs text-muted-foreground/60 font-sans">ELD High School Classroom Teacher</p>
+          </footer>
+        </blockquote>
       </FadeIn>
       <FadeIn delay={0.2} className="flex justify-center">
         <div className="relative">

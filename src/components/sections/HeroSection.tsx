@@ -50,7 +50,7 @@ const HeroSection = () => (
           <img
             src={erikaAuthority}
             alt="Dr. Erika Sun, educator and developer of The Cycle of Thinking framework"
-            className="relative z-10 w-56 md:w-64 h-auto object-cover aspect-[4/5] shadow-lg"
+            className="relative z-10 w-56 md:w-64 h-auto object-cover object-top aspect-[4/5] shadow-lg"
             loading="eager"
           />
           <div className="relative">

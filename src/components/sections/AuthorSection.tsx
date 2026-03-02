@@ -17,7 +17,7 @@ const AuthorSection = () => (
         <img
           src={portrait}
           alt="Erika Sun — Educator and Framework Developer"
-          className="w-full max-w-xs mx-auto object-cover aspect-[4/5] shadow-lg"
+          className="w-full max-w-xs mx-auto object-cover object-top aspect-[4/5] shadow-lg"
         />
       </FadeIn>
       <FadeIn delay={0.15}>

@@ -12,7 +12,7 @@ const About = () => {
               <img
                 src={portrait}
                 alt="Dr. Erika Sun, educator and developer of The Cycle of Thinking framework"
-                className="w-full object-cover aspect-[4/5] transition-transform duration-500 hover:scale-[1.03]"
+                className="w-full object-cover object-top aspect-[4/5] transition-transform duration-500 hover:scale-[1.03]"
               />
             </FadeIn>
             <FadeIn delay={0.15}>

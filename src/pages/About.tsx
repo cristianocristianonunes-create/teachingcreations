@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
-import portrait from "@/assets/erika-portrait.jpg";
+import portrait from "@/assets/erika-professional.jpg";
 
 const About = () => {
   return (
@@ -11,8 +11,8 @@ const About = () => {
             <FadeIn>
               <img
                 src={portrait}
-                alt="Erika Sun"
-                className="w-full object-cover aspect-[4/5]"
+                alt="Dr. Erika Sun, educator and developer of The Cycle of Thinking framework"
+                className="w-full object-cover aspect-[4/5] transition-transform duration-500 hover:scale-[1.03]"
               />
             </FadeIn>
             <FadeIn delay={0.15}>

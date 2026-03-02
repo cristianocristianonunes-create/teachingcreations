@@ -1,6 +1,6 @@
 import { PrefixedLink as Link } from "@/contexts/PathPrefixContext";
 import FadeIn from "@/components/FadeIn";
-import portrait from "@/assets/erika-portrait.jpg";
+import portrait from "@/assets/erika-professional.jpg";
 
 const credentials = [
   "Teaching professionally since 1997",

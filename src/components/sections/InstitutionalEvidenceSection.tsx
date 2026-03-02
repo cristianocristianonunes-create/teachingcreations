@@ -33,12 +33,15 @@ const InstitutionalEvidenceSection = () => (
         <h2 className="text-3xl md:text-4xl font-serif mb-2">
           What Educators Experience After Training
         </h2>
-        <p className="text-sm text-muted-foreground font-sans leading-relaxed mb-8">
-          Patterns emerging across four semesters of professional development
+        <p className="text-sm text-muted-foreground font-sans leading-relaxed mb-3">
+          Patterns emerging across <span className="text-foreground font-medium">four semesters</span> of professional development
           feedback — Spring 2024 through Spring 2025.
         </p>
+        <p className="text-xs text-muted-foreground/70 font-sans mb-10">
+          Collected across longitudinal professional learning cycles.
+        </p>
       </FadeIn>
-      <div className="space-y-6">
+      <div className="space-y-8">
         {patterns.map((p, i) => (
           <FadeIn key={p.title} delay={i * 0.08}>
             <div className="border-l-2 border-accent pl-5">

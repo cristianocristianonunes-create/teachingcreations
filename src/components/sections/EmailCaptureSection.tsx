@@ -100,13 +100,13 @@ const EmailCaptureSection = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full px-8 py-3.5 bg-primary text-primary-foreground text-xs font-medium tracking-widest uppercase hover:opacity-90 transition-opacity disabled:opacity-50"
+                className="w-full px-8 py-3.5 border border-foreground text-foreground text-xs font-medium tracking-widest uppercase transition-colors hover:bg-foreground hover:text-background disabled:opacity-50"
               >
                 {loading
                   ? "Sending…"
                   : isDraft
                   ? "Notify Me When Available"
-                  : "Download Free Chapter"}
+                  : "Get Chapter One"}
               </button>
             </form>
           )}

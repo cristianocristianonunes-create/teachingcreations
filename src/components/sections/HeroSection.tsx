@@ -38,20 +38,20 @@ const HeroSection = () => {
           <p className="mt-3 text-xs text-muted-foreground/70 tracking-wide font-sans max-w-lg">
             Built from classroom practice, professional development, and long-term work with multilingual learner educators.
           </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <a
-              href="#email-capture"
-              className="inline-flex items-center px-8 py-3.5 bg-primary text-primary-foreground text-sm font-medium tracking-widest uppercase transition-opacity hover:opacity-90"
-            >
-              Download a Free Chapter
-            </a>
+          <div className="mt-8 flex flex-wrap items-center gap-5">
             <a
               href="https://a.co/d/05pVmQSf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-8 py-3.5 border border-foreground text-foreground text-sm font-medium tracking-widest uppercase transition-colors hover:bg-foreground hover:text-background"
             >
-              Buy the Book
+              Purchase on Amazon
+            </a>
+            <a
+              href="#email-capture"
+              className="text-sm text-primary font-medium hover:underline underline-offset-4 font-sans"
+            >
+              Get Chapter One →
             </a>
           </div>
           <blockquote className="mt-14 border-l-2 border-primary/20 pl-4 max-w-md">

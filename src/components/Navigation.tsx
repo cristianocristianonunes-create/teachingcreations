@@ -72,9 +72,9 @@ const Navigation = () => {
           {/* Sticky CTA */}
           <a
             href="#email-capture"
-            className="px-5 py-2 bg-primary text-primary-foreground text-xs font-medium tracking-widest uppercase hover:opacity-90 transition-opacity"
+            className="text-sm text-primary font-medium hover:underline underline-offset-4 font-sans"
           >
-            Free Chapter
+            Get Chapter One →
           </a>
         </div>
 
@@ -109,9 +109,9 @@ const Navigation = () => {
             <li>
               <a
                 href="#email-capture"
-                className="inline-flex px-6 py-2.5 bg-primary text-primary-foreground text-xs font-medium tracking-widest uppercase"
+                className="text-base text-primary font-medium hover:underline underline-offset-4 font-sans"
               >
-                Free Chapter
+                Get Chapter One →
               </a>
             </li>
           </ul>

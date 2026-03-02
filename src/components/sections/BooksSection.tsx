@@ -42,7 +42,7 @@ const BooksSection = () => (
                   href="https://a.co/d/05pVmQSf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-2.5 bg-primary text-primary-foreground text-xs font-medium tracking-widest uppercase hover:opacity-90 transition-opacity"
+                  className="px-6 py-2.5 border border-foreground text-foreground text-xs font-medium tracking-widest uppercase transition-colors hover:bg-foreground hover:text-background"
                 >
                   Purchase on Amazon
                 </a>
@@ -50,7 +50,7 @@ const BooksSection = () => (
                   href="#email-capture"
                   className="text-xs text-primary/80 font-sans hover:underline underline-offset-2 mt-1"
                 >
-                  Get notified when Chapter One is available →
+                  Get Chapter One →
                 </a>
               </div>
             </div>

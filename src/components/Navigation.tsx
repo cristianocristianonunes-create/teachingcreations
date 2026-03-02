@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { PrefixedLink as Link, usePathPrefix } from "@/contexts/PathPrefixContext";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/logo-nav.png";
+import logoIcon from "@/assets/logo-nav.png";
+import logoFull from "@/assets/logo-full.png";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -39,15 +40,12 @@ const Navigation = () => {
       }`}
     >
       <nav className="container mx-auto flex items-center justify-between py-3 px-6 lg:px-8">
-        <Link to="/" className="flex items-center gap-3">
+        <Link to="/" className="flex items-center">
           <img
-            src={logo}
+            src={logoFull}
             alt="Teaching Creations"
-            className="h-14 w-14 lg:h-16 lg:w-16 object-contain"
+            className="h-12 sm:h-14 lg:h-16 object-contain"
           />
-          <span className="font-serif text-sm tracking-widest uppercase text-muted-foreground hidden sm:block">
-            Teaching Creations
-          </span>
         </Link>
 
         {/* Desktop */}

@@ -1,24 +1,6 @@
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
-import book1 from "@/assets/book-1.jpg";
-import book2 from "@/assets/book-2.jpg";
-
-const books = [
-  {
-    img: book1,
-    title: "Strategic Access",
-    description:
-      "This book reframes how educators design student entry points into academic content. Moving beyond simplification, Strategic Access™ presents a model for intentional cognitive engagement from the first moment of learning.",
-    audience: "Educators working with multilingual learners, curriculum designers, and instructional coaches seeking research-informed strategies for deeper comprehension.",
-  },
-  {
-    img: book2,
-    title: "Structured Expression",
-    description:
-      "Structured Expression™ explores how students can move from surface-level reproduction to genuine, scaffolded articulation of thought. This book provides frameworks that make thinking visible through deliberate expression design.",
-    audience: "Teachers developing student voice, visible thinking routines, and assessment strategies that reveal cognitive depth.",
-  },
-];
+import bookCover from "@/assets/book-cover.png";
 
 const Books = () => {
   return (
@@ -27,42 +9,43 @@ const Books = () => {
         <div className="container mx-auto px-6 lg:px-8 max-w-4xl">
           <FadeIn>
             <p className="text-xs tracking-widest uppercase text-accent mb-4 font-sans font-medium">
-              Publications
+              Publication
             </p>
-            <h1 className="text-4xl md:text-5xl font-serif mb-6">The Books Behind the Framework</h1>
+            <h1 className="text-4xl md:text-5xl font-serif mb-6">The Book Behind the Framework</h1>
             <div className="w-16 h-px bg-accent mb-16" />
           </FadeIn>
 
-          <div className="space-y-24">
-            {books.map((book, i) => (
-              <FadeIn key={book.title} delay={i * 0.15}>
-                <div className="grid md:grid-cols-[240px_1fr] gap-10 items-start">
-                  <img
-                    src={book.img}
-                    alt={`${book.title} book cover`}
-                    className="w-60 h-auto object-cover shadow-lg mx-auto md:mx-0"
-                  />
-                  <div>
-                    <h2 className="text-2xl font-serif mb-4">{book.title}</h2>
-                    <p className="text-base text-muted-foreground leading-relaxed mb-4 font-sans">
-                      {book.description}
-                    </p>
-                    <p className="text-sm text-muted-foreground mb-6 font-sans">
-                      <span className="font-medium text-foreground">Intended reader:</span> {book.audience}
-                    </p>
-                    <div className="flex flex-wrap gap-3">
-                      <button className="px-6 py-2.5 bg-primary text-primary-foreground text-xs font-medium tracking-widest uppercase hover:opacity-90 transition-opacity">
-                        Purchase
-                      </button>
-                      <button className="px-6 py-2.5 border border-border text-foreground text-xs font-medium tracking-widest uppercase hover:bg-muted transition-colors">
-                        Sample Chapter
-                      </button>
-                    </div>
-                  </div>
+          <FadeIn delay={0.15}>
+            <div className="grid md:grid-cols-[240px_1fr] gap-10 items-start">
+              <img
+                src={bookCover}
+                alt="Teaching Reading and Writing to Multilingual Learners — book cover"
+                className="w-60 h-auto object-contain shadow-lg mx-auto md:mx-0"
+              />
+              <div>
+                <h2 className="text-2xl font-serif mb-2">
+                  Teaching Reading and Writing to Multilingual Learners
+                </h2>
+                <p className="text-sm text-muted-foreground font-sans italic mb-4">
+                  A Coherent Framework for Designing Literacy Instruction
+                </p>
+                <p className="text-base text-muted-foreground leading-relaxed mb-4 font-sans">
+                  This book presents a practical, coherent framework for designing literacy instruction that is accessible, rigorous, and sustainable. Grounded in research and classroom experience, it guides educators to build purposeful reading experiences, teach vocabulary and academic language explicitly, and move from reading interaction to meaningful writing.
+                </p>
+                <p className="text-sm text-muted-foreground mb-6 font-sans">
+                  <span className="font-medium text-foreground">Intended reader:</span> Educators working with multilingual learners, curriculum designers, and instructional coaches seeking research-informed strategies for deeper comprehension.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <button className="px-6 py-2.5 bg-primary text-primary-foreground text-xs font-medium tracking-widest uppercase hover:opacity-90 transition-opacity">
+                    Purchase
+                  </button>
+                  <button className="px-6 py-2.5 border border-border text-foreground text-xs font-medium tracking-widest uppercase hover:bg-muted transition-colors">
+                    Sample Chapter
+                  </button>
                 </div>
-              </FadeIn>
-            ))}
-          </div>
+              </div>
+            </div>
+          </FadeIn>
         </div>
       </section>
     </Layout>

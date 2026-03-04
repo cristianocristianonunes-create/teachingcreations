@@ -36,22 +36,19 @@ const V2HeroSection = () => {
           </a>
         </FadeIn>
 
-        <FadeIn delay={0.2} className="flex justify-center">
-          <div className="relative flex flex-col items-center gap-8">
+        <FadeIn delay={0.2} className="flex items-center justify-center">
+          <div className="flex flex-col items-center gap-6">
             <img
               src={erikaAuthority}
               alt="Dr. Erika Sun, educator and developer of The Cycle of Thinking framework"
-              className="relative z-10 w-[350px] h-auto object-cover object-top aspect-[4/5] shadow-lg"
+              className="w-[350px] h-auto object-cover object-top aspect-[4/5] shadow-lg"
               loading="eager"
             />
-            <div className="relative" style={{ perspective: "800px" }}>
-              <img
-                src={bookCover}
-                alt="Teaching Reading and Writing to Multilingual Learners — book cover"
-                className="relative z-10 w-64 md:w-72 h-auto object-contain shadow-2xl"
-                style={{ transform: "rotateY(-5deg) rotateX(2deg)" }}
-              />
-            </div>
+            <img
+              src={bookCover}
+              alt="Teaching Reading and Writing to Multilingual Learners — book cover"
+              className="w-56 md:w-64 h-auto object-contain shadow-xl"
+            />
           </div>
         </FadeIn>
       </div>

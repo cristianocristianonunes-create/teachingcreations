@@ -28,6 +28,7 @@ import ContentManager from "./pages/admin/ContentManager";
 import SalesAnalytics from "./pages/admin/SalesAnalytics";
 import MediaKit from "./pages/admin/MediaKit";
 import SettingsPage from "./pages/admin/SettingsPage";
+import IndexV2 from "./pages/IndexV2";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +39,10 @@ const isMainDomain =
 /** Wraps children with the /teste prefix so all links point to /teste/... */
 const TestePrefix = ({ children }: { children: React.ReactNode }) => (
   <PathPrefixProvider prefix="/teste">{children}</PathPrefixProvider>
+);
+
+const TesteV2Prefix = ({ children }: { children: React.ReactNode }) => (
+  <PathPrefixProvider prefix="/teste-v2">{children}</PathPrefixProvider>
 );
 
 const App = () => {
@@ -59,6 +64,15 @@ const App = () => {
             <Route path="/teste/insights" element={<TestePrefix><Insights /></TestePrefix>} />
             <Route path="/teste/contact" element={<TestePrefix><Contact /></TestePrefix>} />
             <Route path="/teste/evidence" element={<TestePrefix><Evidence /></TestePrefix>} />
+
+            {/* /teste-v2 routes — new landing page version */}
+            <Route path="/teste-v2" element={<TesteV2Prefix><IndexV2 /></TesteV2Prefix>} />
+            <Route path="/teste-v2/cycle-of-thinking" element={<TesteV2Prefix><CycleOfThinking /></TesteV2Prefix>} />
+            <Route path="/teste-v2/books" element={<TesteV2Prefix><Books /></TesteV2Prefix>} />
+            <Route path="/teste-v2/about" element={<TesteV2Prefix><About /></TesteV2Prefix>} />
+            <Route path="/teste-v2/insights" element={<TesteV2Prefix><Insights /></TesteV2Prefix>} />
+            <Route path="/teste-v2/contact" element={<TesteV2Prefix><Contact /></TesteV2Prefix>} />
+            <Route path="/teste-v2/evidence" element={<TesteV2Prefix><Evidence /></TesteV2Prefix>} />
 
             {/* Standard routes (always accessible) */}
             <Route path="/cycle-of-thinking" element={<CycleOfThinking />} />

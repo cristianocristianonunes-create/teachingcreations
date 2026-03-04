@@ -1,0 +1,56 @@
+import FadeIn from "@/components/FadeIn";
+import TriangleDiagram from "@/components/TriangleDiagram";
+import { Eye, MessageSquare, Lightbulb } from "lucide-react";
+
+const pillars = [
+  {
+    icon: Eye,
+    title: "Strategic Access™",
+    desc: "Designing how students encounter and interpret content — with intentional cognitive entry points.",
+  },
+  {
+    icon: MessageSquare,
+    title: "Structured Expression™",
+    desc: "Providing frameworks that make thinking visible through deliberate, scaffolded articulation.",
+  },
+  {
+    icon: Lightbulb,
+    title: "Intellectual Autonomy",
+    desc: "The capacity to think independently, transferring skills across contexts without external prompts.",
+  },
+];
+
+const V2FrameworkSection = () => (
+  <section className="bg-white" style={{ padding: "96px 0" }}>
+    <div className="container mx-auto px-6 lg:px-8 text-center">
+      <FadeIn>
+        <h2 className="text-3xl md:text-[40px] font-serif font-bold text-[#121212] mb-4 leading-tight">
+          The Cycle of Thinking™: Your Architecture for Autonomy
+        </h2>
+        <p className="text-base text-[#555555] font-sans max-w-3xl mx-auto leading-relaxed mb-12">
+          This isn't another teaching trend. It's a proprietary, 3-part system that makes deep thinking visible, measurable, and teachable. It's the bridge between the theory of Harvard's Project Zero and the data of John Hattie's Visible Learning.
+        </p>
+      </FadeIn>
+
+      <FadeIn delay={0.1} className="flex flex-col items-center mb-16">
+        <TriangleDiagram />
+      </FadeIn>
+
+      <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto text-left">
+        {pillars.map((p, i) => (
+          <FadeIn key={p.title} delay={i * 0.1}>
+            <div className="flex flex-col items-start">
+              <div className="w-12 h-12 rounded-full bg-[#2F5233]/10 flex items-center justify-center mb-4">
+                <p.icon className="w-6 h-6 text-[#2F5233]" />
+              </div>
+              <h3 className="font-serif text-xl text-[#2F5233] mb-2">{p.title}</h3>
+              <p className="text-base text-[#555555] leading-relaxed font-sans">{p.desc}</p>
+            </div>
+          </FadeIn>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+export default V2FrameworkSection;

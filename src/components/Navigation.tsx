@@ -42,13 +42,10 @@ const Navigation = () => {
       <nav className="container mx-auto flex items-center justify-between py-3 px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-2.5">
           <img
-            src={logoIcon}
+            src={logoFull}
             alt="Teaching Creations"
-            className="h-20 w-20 lg:h-20 lg:w-20 object-contain"
+            className="h-14 lg:h-16 w-auto object-contain"
           />
-          <span className="font-serif text-base sm:text-lg lg:text-xl tracking-wide text-foreground">
-            Teaching Creations
-          </span>
         </Link>
 
         {/* Desktop */}

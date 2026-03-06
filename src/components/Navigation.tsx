@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { PrefixedLink as Link, usePathPrefix } from "@/contexts/PathPrefixContext";
 import { Menu, X } from "lucide-react";
-import logoIcon from "@/assets/logo-nav.png";
-import logoFull from "@/assets/logo-full.png";
+import logoFull from "@/assets/logo-new-1.png";
+import logoSymbol from "@/assets/logo-new-3.png";
 
 const navLinks = [
   { label: "Home", path: "/" },

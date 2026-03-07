@@ -8,6 +8,7 @@ import V2TestimonialsSection from "@/components/v2/V2TestimonialsSection";
 import V2BookSection from "@/components/v2/V2BookSection";
 import V2AboutSection from "@/components/v2/V2AboutSection";
 import V2PdSection from "@/components/v2/V2PdSection";
+import V2SpeakingSection from "@/components/v2/V2SpeakingSection";
 import V2FaqSection from "@/components/v2/V2FaqSection";
 import V2EmailCaptureSection from "@/components/v2/V2EmailCaptureSection";
 import V2Footer from "@/components/v2/V2Footer";
@@ -25,6 +26,7 @@ const IndexV2 = () => {
         <V2TestimonialsSection />
         <V2BookSection />
         <V2AboutSection />
+        <V2SpeakingSection />
         <V2PdSection />
         <V2FaqSection />
         <V2EmailCaptureSection />

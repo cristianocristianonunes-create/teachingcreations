@@ -64,7 +64,7 @@ const AdminLayout = () => {
             <img
               src={logo}
               alt="Teaching Creations"
-              className="w-32 h-auto object-contain"
+              className="w-full h-auto object-contain max-h-28"
             />
             <span className="text-[10px] text-muted-foreground tracking-wider uppercase">
               Admin

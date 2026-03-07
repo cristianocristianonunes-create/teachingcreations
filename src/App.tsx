@@ -29,6 +29,7 @@ import SalesAnalytics from "./pages/admin/SalesAnalytics";
 import MediaKit from "./pages/admin/MediaKit";
 import SettingsPage from "./pages/admin/SettingsPage";
 import IndexV2 from "./pages/IndexV2";
+import Speaking from "./pages/Speaking";
 
 const queryClient = new QueryClient();
 
@@ -81,6 +82,7 @@ const App = () => {
             <Route path="/insights" element={<Insights />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/evidence" element={<Evidence />} />
+            <Route path="/speaking" element={<Speaking />} />
             <Route path="/professional-development-feedback" element={<ProfessionalDevelopmentFeedback />} />
 
             {/* Admin routes */}

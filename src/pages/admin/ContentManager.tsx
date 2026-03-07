@@ -77,6 +77,17 @@ const pages = [
       { key: "email_benefit_2", label: "Captura de Email — Benefício 2", type: "text" },
       { key: "email_benefit_3", label: "Captura de Email — Benefício 3", type: "text" },
       { key: "email_bonus", label: "Captura de Email — Bônus (dourado)", type: "textarea" },
+      // Speaking
+      { key: "speaking_title", label: "Speaking — Título da seção", type: "text" },
+      { key: "speaking_description", label: "Speaking — Descrição", type: "textarea" },
+      { key: "speaking_topic_1_title", label: "Speaking — Tema 1 Título", type: "text" },
+      { key: "speaking_topic_1_desc", label: "Speaking — Tema 1 Descrição", type: "textarea" },
+      { key: "speaking_topic_2_title", label: "Speaking — Tema 2 Título", type: "text" },
+      { key: "speaking_topic_2_desc", label: "Speaking — Tema 2 Descrição", type: "textarea" },
+      { key: "speaking_topic_3_title", label: "Speaking — Tema 3 Título", type: "text" },
+      { key: "speaking_topic_3_desc", label: "Speaking — Tema 3 Descrição", type: "textarea" },
+      { key: "speaking_formats", label: "Speaking — Formatos disponíveis", type: "textarea" },
+      { key: "speaking_cta", label: "Speaking — Botão CTA", type: "text" },
       // FAQ
       { key: "faq_title", label: "FAQ — Título", type: "text" },
       { key: "faq_1_q", label: "FAQ 1 — Pergunta", type: "text" },

@@ -8,8 +8,8 @@ const navLinks = [
   { label: "Home", path: "/" },
   { label: "The Cycle of Thinking™", path: "/cycle-of-thinking" },
   { label: "Books", path: "/books" },
+  { label: "Speaking", path: "/speaking" },
   { label: "About Erika", path: "/about" },
-  { label: "Evidence", path: "/evidence" },
   { label: "Contact", path: "/contact" },
 ];
 

@@ -3,14 +3,10 @@ import FadeIn from "@/components/FadeIn";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { Check } from "lucide-react";
-
-const benefits = [
-  "The complete 3-part framework diagram.",
-  "A step-by-step guide to designing your first thinking-driven lesson.",
-  "3 common mistakes to avoid when teaching multilingual learners.",
-];
+import { usePageContent } from "@/hooks/usePageContent";
 
 const V2EmailCaptureSection = () => {
+  const { get } = usePageContent("home");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
@@ -64,14 +60,18 @@ const V2EmailCaptureSection = () => {
       <div className="container mx-auto px-6 lg:px-8 max-w-2xl text-center">
         <FadeIn>
           <h2 className="text-3xl md:text-[40px] font-serif font-bold text-[#121212] mb-4 leading-tight">
-            Get the Framework in Your Inbox—Instantly.
+            {get("email_title", "Get the Framework in Your Inbox—Instantly.")}
           </h2>
           <p className="text-base text-[#555555] font-sans leading-relaxed mb-6">
-            Download Chapter One of "Teaching Reading and Writing to Multilingual Learners" for free and get the complete visual map of The Cycle of Thinking™. See exactly how to implement Strategic Access™ in your next lesson.
+            {get("email_description", "Download Chapter One of \"Teaching Reading and Writing to Multilingual Learners\" for free and get the complete visual map of The Cycle of Thinking™. See exactly how to implement Strategic Access™ in your next lesson.")}
           </p>
 
           <ul className="text-base text-[#555555] font-sans leading-relaxed mb-4 space-y-2 inline-block text-left">
-            {benefits.map((b) => (
+            {[
+              get("email_benefit_1", "The complete 3-part framework diagram."),
+              get("email_benefit_2", "A step-by-step guide to designing your first thinking-driven lesson."),
+              get("email_benefit_3", "3 common mistakes to avoid when teaching multilingual learners."),
+            ].map((b) => (
               <li key={b} className="flex items-start gap-3">
                 <Check className="w-5 h-5 text-[#2F5233] mt-0.5 flex-shrink-0" />
                 <span>{b}</span>
@@ -80,7 +80,7 @@ const V2EmailCaptureSection = () => {
           </ul>
 
           <p className="text-sm text-[#B8860B] font-medium font-sans mb-8">
-            Bonus: When you download Chapter One this week, you'll also receive our "5 Activities to Make Thinking Visible" guide (a $29 value).
+            {get("email_bonus", "Bonus: When you download Chapter One this week, you'll also receive our \"5 Activities to Make Thinking Visible\" guide (a $29 value).")}
           </p>
 
           {submitted ? (

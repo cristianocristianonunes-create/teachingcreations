@@ -37,41 +37,42 @@ const V2Navigation = () => {
           : "bg-transparent"
       }`}
     >
-      <nav className="container mx-auto flex items-center justify-between py-3 px-6 lg:px-8">
-        <Link to="/" className="flex items-center">
-          <img src={logoIcon} alt="Teaching Creations" className="h-24 w-auto object-contain" />
+      <nav className="container mx-auto flex items-center py-3 px-6 lg:px-8">
+        {/* Logo */}
+        <Link to="/" className="flex-shrink-0">
+          <img src={logoIcon} alt="Teaching Creations" className="h-28 w-auto object-contain" />
         </Link>
 
-        {/* Desktop */}
-        <div className="hidden lg:flex items-center gap-8">
-          <ul className="flex items-center gap-6">
-            {navLinks.map((link) => (
-              <li key={link.path}>
-                <Link
-                  to={link.path}
-                  className={`text-sm tracking-wide transition-colors duration-200 hover:text-[#2F5233] ${
-                    location.pathname === `${prefix}${link.path}`
-                      ? "text-[#2F5233] font-medium"
-                      : "text-[#555555]"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <a
-            href="#v2-email-capture"
-            className="px-5 py-2.5 bg-[#B8860B] text-white text-sm font-medium tracking-wide hover:bg-[#9A7209] transition-colors"
-          >
-            Get Chapter One →
-          </a>
-        </div>
+        {/* Desktop nav links — close to logo */}
+        <ul className="hidden lg:flex items-center gap-6 ml-10">
+          {navLinks.map((link) => (
+            <li key={link.path}>
+              <Link
+                to={link.path}
+                className={`text-sm tracking-wide transition-colors duration-200 hover:text-[#2F5233] ${
+                  location.pathname === `${prefix}${link.path}`
+                    ? "text-[#2F5233] font-medium"
+                    : "text-[#555555]"
+                }`}
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
 
-        {/* Mobile toggle */}
+        {/* Desktop CTA — pushed to far right */}
+        <a
+          href="#v2-email-capture"
+          className="hidden lg:inline-flex ml-auto px-5 py-2.5 bg-[#B8860B] text-white text-sm font-medium tracking-wide hover:bg-[#9A7209] transition-colors"
+        >
+          Get Chapter One →
+        </a>
+
+        {/* Mobile toggle — pushed to far right */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden text-[#121212]"
+          className="lg:hidden ml-auto text-[#121212]"
           aria-label="Toggle menu"
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}

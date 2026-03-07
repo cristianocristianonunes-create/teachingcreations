@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { PrefixedLink as Link, usePathPrefix } from "@/contexts/PathPrefixContext";
 import { Menu, X } from "lucide-react";
-import logoFull from "@/assets/logo-new-1.png";
-import logoSymbol from "@/assets/logo-new-3.png";
+import logoFull from "@/assets/logo-full-transparent.png";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -44,7 +43,8 @@ const Navigation = () => {
           <img
             src={logoFull}
             alt="Teaching Creations"
-            className="h-14 lg:h-16 w-auto object-contain"
+            className="h-36 w-auto object-contain"
+            style={{ marginTop: "-18%", marginBottom: "-25%" }}
           />
         </Link>
 

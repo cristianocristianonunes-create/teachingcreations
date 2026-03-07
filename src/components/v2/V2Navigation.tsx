@@ -39,7 +39,7 @@ const V2Navigation = () => {
     >
       <nav className="container mx-auto flex items-center justify-between py-3 px-6 lg:px-8">
         <Link to="/" className="flex items-center">
-          <img src={logoIcon} alt="Teaching Creations" className="h-14 w-auto object-contain" />
+          <img src={logoIcon} alt="Teaching Creations" className="h-20 w-auto object-contain" />
         </Link>
 
         {/* Desktop */}

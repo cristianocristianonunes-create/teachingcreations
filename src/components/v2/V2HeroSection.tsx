@@ -1,7 +1,9 @@
 import FadeIn from "@/components/FadeIn";
 import bookCover from "@/assets/book-cover.png";
+import { usePageContent } from "@/hooks/usePageContent";
 
 const V2HeroSection = () => {
+  const { get } = usePageContent("home");
   return (
     <section className="min-h-[80vh] flex items-center bg-[#F9F9F9]" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
       <div className="container mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
@@ -13,10 +15,10 @@ const V2HeroSection = () => {
             FOR K-12 EDUCATORS WHOSE STUDENTS ARE DROWNING IN BUSYWORK
           </p>
           <h1 className="text-4xl md:text-5xl lg:text-[56px] font-serif font-bold leading-tight text-[#121212]">
-            Stop Mistaking Participation for Thinking.
+            {get("hero_headline", "Stop Mistaking Participation for Thinking.")}
           </h1>
           <p className="mt-6 text-lg text-[#555555] leading-relaxed max-w-lg font-sans">
-            The classroom-proven framework to develop truly independent learners, increase student autonomy by 40%, and reclaim your planning time.
+            {get("hero_subheadline", "The classroom-proven framework to develop truly independent learners, increase student autonomy by 40%, and reclaim your planning time.")}
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row items-start gap-4">

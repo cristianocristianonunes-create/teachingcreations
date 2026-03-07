@@ -1,4 +1,5 @@
 import FadeIn from "@/components/FadeIn";
+import { usePageContent } from "@/hooks/usePageContent";
 
 const problems = [
   {
@@ -15,12 +16,14 @@ const problems = [
   },
 ];
 
-const V2ProblemSection = () => (
+const V2ProblemSection = () => {
+  const { get } = usePageContent("home");
+  return (
   <section className="bg-[#F9F9F9]" style={{ padding: "96px 0" }}>
     <div className="container mx-auto px-6 lg:px-8">
       <FadeIn>
         <h2 className="text-3xl md:text-[40px] font-serif font-bold text-center text-[#121212] mb-4 leading-tight">
-          Your Students Seem Engaged. But Are They Thinking?
+          {get("problem_title", "Your Students Seem Engaged. But Are They Thinking?")}
         </h2>
         <div className="w-16 h-px bg-[#B8860B] mx-auto mb-16" />
       </FadeIn>
@@ -34,6 +37,7 @@ const V2ProblemSection = () => (
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default V2ProblemSection;

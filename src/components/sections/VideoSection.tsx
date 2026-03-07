@@ -1,8 +1,12 @@
 import FadeIn from "@/components/FadeIn";
 import VideoWithPoster from "@/components/VideoWithPoster";
 import vslVideo from "@/assets/vsl-video.mp4";
+import { usePageContent } from "@/hooks/usePageContent";
 
-const VideoSection = () => (
+const VideoSection = () => {
+  const { get } = usePageContent("home");
+  const videoSrc = get("vsl_url", "") || vslVideo;
+  return (
   <section className="py-20 bg-secondary" id="video">
     <div className="container mx-auto px-6 lg:px-8 max-w-3xl text-center">
       <FadeIn>
@@ -12,10 +16,11 @@ const VideoSection = () => (
         <p className="text-sm text-muted-foreground font-sans mb-8">
           Dr. Erika Sun walks you through The Cycle of Thinking™ and how it transforms classroom instruction.
         </p>
-        <VideoWithPoster src={vslVideo} />
+        <VideoWithPoster src={videoSrc} />
       </FadeIn>
     </div>
   </section>
-);
+  );
+};
 
 export default VideoSection;

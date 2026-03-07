@@ -1,6 +1,7 @@
 import FadeIn from "@/components/FadeIn";
 import TriangleDiagram from "@/components/TriangleDiagram";
 import { Eye, MessageSquare, Lightbulb } from "lucide-react";
+import { usePageContent } from "@/hooks/usePageContent";
 
 const pillars = [
   {
@@ -20,15 +21,17 @@ const pillars = [
   },
 ];
 
-const V2FrameworkSection = () => (
+const V2FrameworkSection = () => {
+  const { get } = usePageContent("home");
+  return (
   <section className="bg-white" style={{ padding: "96px 0" }}>
     <div className="container mx-auto px-6 lg:px-8 text-center">
       <FadeIn>
         <h2 className="text-3xl md:text-[40px] font-serif font-bold text-[#121212] mb-4 leading-tight">
-          The Cycle of Thinking™: Your Architecture for Autonomy
+          {get("model_title", "The Cycle of Thinking™: Your Architecture for Autonomy")}
         </h2>
         <p className="text-base text-[#555555] font-sans max-w-3xl mx-auto leading-relaxed mb-12">
-          This isn't another teaching trend. It's a proprietary, 3-part system that makes deep thinking visible, measurable, and teachable. It's the bridge between the theory of Harvard's Project Zero and the data of John Hattie's Visible Learning.
+          {get("model_body", "This isn't another teaching trend. It's a proprietary, 3-part system that makes deep thinking visible, measurable, and teachable. It's the bridge between the theory of Harvard's Project Zero and the data of John Hattie's Visible Learning.")}
         </p>
       </FadeIn>
 
@@ -51,6 +54,7 @@ const V2FrameworkSection = () => (
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default V2FrameworkSection;

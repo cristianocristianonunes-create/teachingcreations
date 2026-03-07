@@ -24,7 +24,7 @@ const pillars = [
 const V2FrameworkSection = () => {
   const { get } = usePageContent("home");
   return (
-  <section className="bg-white" style={{ padding: "96px 0" }}>
+  <section className="bg-white" style={{ padding: "72px 0" }}>
     <div className="container mx-auto px-6 lg:px-8 text-center">
       <FadeIn>
         <h2 className="text-3xl md:text-[40px] font-serif font-bold text-[#121212] mb-4 leading-tight">
@@ -37,6 +37,11 @@ const V2FrameworkSection = () => {
 
       <FadeIn delay={0.1} className="flex flex-col items-center mb-16">
         <TriangleDiagram />
+        <p className="mt-6 max-w-xl text-sm text-[#555555] font-sans leading-relaxed text-center italic">
+          Each vertex feeds the next — Strategic Access opens the door, Structured Expression
+          makes thinking visible, and Intellectual Autonomy sustains it independently.
+          Together, they form a self-reinforcing cycle that compounds over time.
+        </p>
       </FadeIn>
 
       <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto text-left">

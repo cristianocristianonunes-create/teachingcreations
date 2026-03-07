@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
-import portrait from "@/assets/erika-professional.jpg";
+import portrait from "@/assets/erika-about.jpg";
 
 const About = () => {
   return (

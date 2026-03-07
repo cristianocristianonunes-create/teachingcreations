@@ -64,10 +64,9 @@ const AdminLayout = () => {
             <img
               src={logo}
               alt="Teaching Creations"
-              className="w-full h-auto object-contain"
-              style={{ marginTop: "-15%", marginBottom: "-15%" }}
+              className="w-32 h-auto object-contain"
             />
-            <span className="text-[10px] text-muted-foreground tracking-wider uppercase mt-1">
+            <span className="text-[10px] text-muted-foreground tracking-wider uppercase">
               Admin
             </span>
           </Link>

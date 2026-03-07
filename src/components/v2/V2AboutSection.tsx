@@ -1,6 +1,6 @@
 import { PrefixedLink as Link } from "@/contexts/PathPrefixContext";
 import FadeIn from "@/components/FadeIn";
-import portrait from "@/assets/erika-professional.jpg";
+import portrait from "@/assets/erika-about.jpg";
 import { usePageContent } from "@/hooks/usePageContent";
 
 const V2AboutSection = () => {

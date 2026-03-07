@@ -53,8 +53,8 @@ const App = () => {
         <Sonner />
         <BrowserRouter>
           <Routes>
-            {/* Root: Coming Soon on main domain, full site otherwise */}
-            <Route path="/" element={isMainDomain ? <ComingSoon /> : <Index />} />
+            {/* Root: V2 landing page */}
+            <Route path="/" element={<IndexV2 />} />
 
             {/* /teste routes — full site preview on main domain */}
             <Route path="/teste" element={<TestePrefix><Index /></TestePrefix>} />

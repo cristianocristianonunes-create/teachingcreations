@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
 import { PrefixedLink as Link } from "@/contexts/PathPrefixContext";
 import { Mic, Users, Lightbulb, Globe, Clock, CheckCircle } from "lucide-react";
-import portrait from "@/assets/erika-professional.jpg";
+import portrait from "@/assets/erika-speaking.jpg";
 
 const keynotes = [
   {

@@ -43,8 +43,7 @@ const Navigation = () => {
           <img
             src={logoFull}
             alt="Teaching Creations"
-            className="h-36 w-auto object-contain"
-            style={{ marginTop: "-18%", marginBottom: "-25%" }}
+            className="h-14 w-auto object-contain"
           />
         </Link>
 

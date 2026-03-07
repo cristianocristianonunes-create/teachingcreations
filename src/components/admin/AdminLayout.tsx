@@ -14,7 +14,7 @@ import {
   Settings,
   LogOut,
 } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo-vertical-transparent.png";
 
 const navItems = [
   { label: "Dashboard", path: "/admin", icon: LayoutDashboard },
@@ -60,20 +60,16 @@ const AdminLayout = () => {
       {/* Sidebar */}
       <aside className="w-60 border-r border-border flex flex-col fixed inset-y-0 left-0 bg-card/50">
         <div className="p-5 border-b border-border">
-          <Link to="/admin" className="flex items-center gap-2.5">
+          <Link to="/admin" className="flex flex-col items-center">
             <img
               src={logo}
-              alt="TC"
-              className="h-10 w-10 object-cover object-[50%_18%] [clip-path:polygon(50%_2%,98%_98%,2%_98%)]"
+              alt="Teaching Creations"
+              className="w-full h-auto object-contain"
+              style={{ marginTop: "-15%", marginBottom: "-15%" }}
             />
-            <div>
-              <span className="text-xs font-medium tracking-widest uppercase text-foreground block">
-                Teaching Creations
-              </span>
-              <span className="text-[10px] text-muted-foreground tracking-wider uppercase">
-                Admin
-              </span>
-            </div>
+            <span className="text-[10px] text-muted-foreground tracking-wider uppercase mt-1">
+              Admin
+            </span>
           </Link>
         </div>
 

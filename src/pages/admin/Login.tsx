@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo-vertical-transparent.png";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -32,7 +32,8 @@ const Login = () => {
           <img
             src={logo}
             alt="Teaching Creations"
-            className="h-20 w-20 mx-auto object-cover object-[50%_18%] [clip-path:polygon(50%_2%,98%_98%,2%_98%)] mb-4"
+            className="h-40 w-auto mx-auto object-contain mb-4"
+            style={{ marginTop: "-15%", marginBottom: "-10%" }}
           />
           <h1 className="text-2xl font-serif text-foreground">Admin Access</h1>
           <p className="text-sm text-muted-foreground mt-1">Teaching Creations Platform</p>

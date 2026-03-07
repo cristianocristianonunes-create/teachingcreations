@@ -2,15 +2,14 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { PrefixedLink as Link, usePathPrefix } from "@/contexts/PathPrefixContext";
 import { Menu, X } from "lucide-react";
-import logoFull from "@/assets/logo-full-transparent.png";
+import logoIcon from "@/assets/logo-full-transparent.png";
 
 const navLinks = [
   { label: "Home", path: "/" },
   { label: "The Cycle of Thinking™", path: "/cycle-of-thinking" },
   { label: "Books", path: "/books" },
+  { label: "Speaking", path: "/speaking" },
   { label: "About Erika", path: "/about" },
-  { label: "Evidence", path: "/evidence" },
-  { label: "Insights", path: "/insights" },
   { label: "Contact", path: "/contact" },
 ];
 
@@ -31,53 +30,42 @@ const Navigation = () => {
   }, [location.pathname]);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-background/95 backdrop-blur-sm border-b border-border shadow-sm"
-          : "bg-transparent"
-      }`}
-    >
-      <nav className="container mx-auto flex items-center justify-between py-3 px-6 lg:px-8">
-        <Link to="/" className="flex items-center gap-2.5">
-          <img
-            src={logoFull}
-            alt="Teaching Creations"
-            className="h-20 w-auto object-contain"
-          />
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#F9F9F9]/95 backdrop-blur-sm border-b border-[#E0E0E0] shadow-sm">
+      <nav className="container mx-auto flex items-center py-3 px-6 lg:px-8">
+        <Link to="/" className="flex-shrink-0">
+          <img src={logoIcon} alt="Teaching Creations" className="h-28 w-auto object-contain" />
         </Link>
 
-        {/* Desktop */}
-        <div className="hidden lg:flex items-center gap-8">
-          <ul className="flex items-center gap-7">
-            {navLinks.map((link) => (
-              <li key={link.path}>
-                <Link
-                  to={link.path}
-                  className={`text-sm tracking-wide transition-colors duration-200 hover:text-primary ${
-                    location.pathname === `${prefix}${link.path}`
-                      ? "text-primary font-medium"
-                      : "text-muted-foreground"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          {/* Sticky CTA */}
-          <a
-            href="#email-capture"
-            className="text-sm text-primary font-medium hover:underline underline-offset-4 font-sans"
-          >
-            Get Chapter One →
-          </a>
-        </div>
+        {/* Desktop nav links — close to logo */}
+        <ul className="hidden lg:flex items-center gap-6 ml-10">
+          {navLinks.map((link) => (
+            <li key={link.path}>
+              <Link
+                to={link.path}
+                className={`text-sm tracking-wide transition-colors duration-200 hover:text-[#2F5233] ${
+                  location.pathname === `${prefix}${link.path}`
+                    ? "text-[#2F5233] font-medium"
+                    : "text-[#555555]"
+                }`}
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        {/* Desktop CTA — pushed to far right */}
+        <a
+          href="#email-capture"
+          className="hidden lg:inline-flex ml-auto px-5 py-2.5 bg-[#B8860B] text-white text-sm font-medium tracking-wide hover:bg-[#9A7209] transition-colors"
+        >
+          Get Chapter One →
+        </a>
 
         {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden text-foreground"
+          className="lg:hidden ml-auto text-[#121212]"
           aria-label="Toggle menu"
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -86,16 +74,16 @@ const Navigation = () => {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden bg-background border-b border-border">
+        <div className="lg:hidden bg-[#F9F9F9] border-b border-[#E0E0E0]">
           <ul className="flex flex-col items-center gap-5 py-6">
             {navLinks.map((link) => (
               <li key={link.path}>
                 <Link
                   to={link.path}
-                  className={`text-base tracking-wide transition-colors duration-200 hover:text-primary ${
+                  className={`text-base tracking-wide transition-colors duration-200 hover:text-[#2F5233] ${
                     location.pathname === `${prefix}${link.path}`
-                      ? "text-primary font-medium"
-                      : "text-muted-foreground"
+                      ? "text-[#2F5233] font-medium"
+                      : "text-[#555555]"
                   }`}
                 >
                   {link.label}
@@ -105,7 +93,7 @@ const Navigation = () => {
             <li>
               <a
                 href="#email-capture"
-                className="text-base text-primary font-medium hover:underline underline-offset-4 font-sans"
+                className="px-5 py-2.5 bg-[#B8860B] text-white text-sm font-medium tracking-wide hover:bg-[#9A7209] transition-colors"
               >
                 Get Chapter One →
               </a>

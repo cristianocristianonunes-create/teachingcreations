@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { PrefixedLink as Link, usePathPrefix } from "@/contexts/PathPrefixContext";
 import { Menu, X } from "lucide-react";
-import logoIcon from "@/assets/logo-nav.png";
+import logoIcon from "@/assets/logo-full-transparent.png";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -39,7 +39,7 @@ const V2Navigation = () => {
     >
       <nav className="container mx-auto flex items-center justify-between py-3 px-6 lg:px-8">
         <Link to="/" className="flex items-center">
-          <img src={logoIcon} alt="Teaching Creations" className="h-12 w-auto object-contain" />
+          <img src={logoIcon} alt="Teaching Creations" className="h-16 w-auto object-contain" />
         </Link>
 
         {/* Desktop */}

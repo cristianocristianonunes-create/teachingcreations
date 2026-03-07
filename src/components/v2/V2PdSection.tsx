@@ -28,7 +28,7 @@ const V2PdSection = () => (
           ))}
         </ul>
         <p className="text-sm text-white/50 font-sans mb-8">
-          Due to the in-depth nature of our coaching, we limit our partnerships to 5 new districts per semester. Spots for Fall 2026 are filling fast.
+          Due to the in-depth nature of our coaching, we limit our partnerships to 5 new districts per semester. Spots are limited — inquire early to secure your district's place.
         </p>
         <div>
           <Link

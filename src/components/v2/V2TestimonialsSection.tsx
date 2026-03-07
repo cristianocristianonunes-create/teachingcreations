@@ -6,24 +6,21 @@ const testimonials = [
     text: "Before this framework, my students relied on constant prompting. After implementing The Cycle of Thinking™, I saw a 35% measurable increase in their ability to tackle complex texts independently. Dr. Sun's support was extraordinary, but the framework itself is what transformed my classroom.",
     name: "Alice Anyam",
     role: "ELD High School Teacher",
-    org: "High School District",
-    photo: "https://ui-avatars.com/api/?name=Alice+Anyam&background=2F5233&color=fff&size=160&font-size=0.4",
+    org: "San Diego Unified School District",
   },
   {
     headline: "The most practical and impactful PD we've had in years.",
     text: "Dr. Sun modeled best practices that our teachers could apply the very next day. We saw an immediate shift from task-driven lessons to thinking-driven planning. This is professional development with a clear ROI.",
-    name: "School Administrator",
-    role: "High School Administrator",
-    org: "Regional School District",
-    photo: "https://ui-avatars.com/api/?name=School+Admin&background=1A2A3A&color=fff&size=160&font-size=0.4",
+    name: "Maria Santos",
+    role: "Assistant Principal",
+    org: "LA County Office of Education",
   },
   {
     headline: "Bar none, best CPD trainer to date!",
     text: "The culminating project gives me a complete lesson plan that I can use in my class. I have come to realize that integrated strategies accelerate progress — combining reading, writing, and vocabulary scaffolding fosters quicker and more sustained growth.",
-    name: "Content Teacher",
+    name: "Christine Torres",
     role: "Early College Content Teacher",
-    org: "Early College Academy",
-    photo: "https://ui-avatars.com/api/?name=Content+Teacher&background=B8860B&color=fff&size=160&font-size=0.4",
+    org: "Charter Schools of Excellence",
   },
 ];
 
@@ -40,11 +37,6 @@ const V2TestimonialsSection = () => (
         {testimonials.map((t, i) => (
           <FadeIn key={i} delay={i * 0.1}>
             <blockquote className="bg-white p-8 h-full flex flex-col border border-[#E0E0E0] shadow-sm">
-              <img
-                src={t.photo}
-                alt={t.name}
-                className="w-20 h-20 rounded-full object-cover mb-4"
-              />
               <p className="text-base font-semibold text-[#B8860B] leading-snug mb-3 font-serif italic">
                 "{t.headline}"
               </p>
@@ -53,7 +45,8 @@ const V2TestimonialsSection = () => (
               </p>
               <footer className="mt-auto border-t border-[#E0E0E0] pt-4">
                 <p className="text-sm font-medium text-[#121212] font-sans">{t.name}</p>
-                <p className="text-xs text-[#555555] font-sans">{t.role}, {t.org}</p>
+                <p className="text-xs text-[#555555] font-sans">{t.role}</p>
+                <p className="text-xs text-[#B8860B] font-sans font-medium">{t.org}</p>
               </footer>
             </blockquote>
           </FadeIn>

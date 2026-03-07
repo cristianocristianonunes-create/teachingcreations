@@ -6,7 +6,7 @@ const V2BookSection = () => (
     <div className="container mx-auto px-6 lg:px-8">
       <FadeIn>
         <h2 className="text-3xl md:text-[40px] font-serif font-bold text-center text-[#121212] mb-4 leading-tight">
-          The Book That Started It All
+          The Framework, In Your Hands.
         </h2>
         <div className="w-16 h-px bg-[#B8860B] mx-auto mb-16" />
       </FadeIn>
@@ -32,7 +32,7 @@ const V2BookSection = () => (
             href="https://a.co/d/05pVmQSf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm text-[#2F5233] font-medium tracking-wide hover:underline underline-offset-4"
+            className="inline-flex items-center px-8 py-4 bg-[#B8860B] text-white text-sm font-semibold tracking-wide hover:bg-[#9A7209] transition-colors"
           >
             Purchase on Amazon →
           </a>

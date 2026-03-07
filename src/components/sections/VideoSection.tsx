@@ -7,10 +7,10 @@ const VideoSection = () => (
     <div className="container mx-auto px-6 lg:px-8 max-w-3xl text-center">
       <FadeIn>
         <h2 className="text-2xl md:text-3xl font-serif mb-3">
-          Introduction
+          See the Framework in Action
         </h2>
         <p className="text-sm text-muted-foreground font-sans mb-8">
-          A brief introduction to the thinking behind the framework.
+          Dr. Erika Sun walks you through The Cycle of Thinking™ and how it transforms classroom instruction.
         </p>
         <VideoWithPoster src={vslVideo} />
       </FadeIn>

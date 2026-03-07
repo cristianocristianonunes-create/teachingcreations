@@ -115,8 +115,8 @@ const Speaking = () => {
             <div className="grid md:grid-cols-3 gap-8 text-left">
               {[
                 { stat: "28+", label: "Years in the Classroom", desc: "Not a theorist — a practitioner who built this framework solving real problems with real students." },
-                { stat: "2,500+", label: "Educators Trained", desc: "Across districts in California, Florida, and beyond. Proven delivery at scale." },
-                { stat: "98%", label: "Recommendation Rate", desc: "From principals, coaches, and conference organizers who have hosted her sessions." },
+                { stat: "4", label: "Semesters of Documented PD", desc: "Longitudinal feedback collected Spring 2024 – Spring 2025 across multiple cohorts." },
+                { stat: "K–12", label: "Multilingual Literacy Focus", desc: "Every session grounded in the real challenges of teaching language-diverse students." },
               ].map((item) => (
                 <div key={item.stat} className="border-t-2 border-[#B8860B] pt-6">
                   <p className="text-4xl font-serif font-bold text-[#2F5233] mb-1">{item.stat}</p>

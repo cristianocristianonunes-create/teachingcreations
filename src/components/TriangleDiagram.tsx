@@ -10,6 +10,7 @@ const TriangleDiagram = ({ className = "", size = "lg" }: { className?: string; 
         width={dim}
         height={dim}
         className="relative z-10 object-contain"
+        style={{ marginTop: "-15%", marginBottom: "-30%" }}
       />
     </div>
   );

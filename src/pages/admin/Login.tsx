@@ -29,12 +29,14 @@ const Login = () => {
     <div className="min-h-screen flex items-center justify-center bg-background px-4">
       <div className="w-full max-w-sm">
         <div className="text-center mb-10">
-          <img
-            src={logo}
-            alt="Teaching Creations"
-            className="h-40 w-auto mx-auto object-contain mb-4"
-            style={{ marginTop: "-15%", marginBottom: "-10%" }}
-          />
+          <div className="overflow-hidden mx-auto mb-4" style={{ height: "120px" }}>
+            <img
+              src={logo}
+              alt="Teaching Creations"
+              className="h-48 w-auto mx-auto object-contain"
+              style={{ marginTop: "-10%" }}
+            />
+          </div>
           <h1 className="text-2xl font-serif text-foreground">Admin Access</h1>
           <p className="text-sm text-muted-foreground mt-1">Teaching Creations Platform</p>
         </div>

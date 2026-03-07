@@ -51,7 +51,7 @@ const V2FrameworkSection = () => {
               <div className="w-12 h-12 rounded-full bg-[#2F5233]/10 flex items-center justify-center mb-4">
                 <p.icon className="w-6 h-6 text-[#2F5233]" />
               </div>
-              <h3 className="font-serif text-xl text-[#2F5233] mb-2">{p.title}</h3>
+              <h3 className="font-serif text-xl font-semibold text-[#2F5233] mb-2">{p.title}</h3>
               <p className="text-base text-[#555555] leading-relaxed font-sans">{p.desc}</p>
             </div>
           </FadeIn>

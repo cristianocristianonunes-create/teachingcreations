@@ -19,7 +19,7 @@ const V2BookSection = () => (
           />
         </FadeIn>
         <FadeIn delay={0.15}>
-          <h3 className="font-serif text-2xl text-[#121212] mb-2">
+          <h3 className="font-serif text-2xl font-semibold text-[#121212] mb-2">
             Teaching Reading and Writing to Multilingual Learners
           </h3>
           <p className="text-base text-[#555555] leading-relaxed font-sans mb-4">

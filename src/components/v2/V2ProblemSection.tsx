@@ -30,7 +30,7 @@ const V2ProblemSection = () => {
       <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto">
         {problems.map((item, i) => (
           <FadeIn key={item.title} delay={i * 0.12}>
-            <h3 className="text-xl font-serif text-[#2F5233] mb-3">{item.title}</h3>
+            <h3 className="text-xl font-serif font-semibold text-[#2F5233] mb-3">{item.title}</h3>
             <p className="text-base text-[#555555] leading-relaxed font-sans">{item.text}</p>
           </FadeIn>
         ))}

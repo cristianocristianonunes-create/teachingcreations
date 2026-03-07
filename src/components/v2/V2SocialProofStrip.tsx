@@ -4,7 +4,7 @@ const V2SocialProofStrip = () => (
   <section id="v2-social-proof" className="bg-[#1A2A3A]" style={{ padding: "48px 0" }}>
     <div className="container mx-auto px-6 lg:px-8 text-center">
       <FadeIn>
-        <h2 className="text-xl md:text-2xl font-serif text-white mb-8">
+        <h2 className="text-xl md:text-2xl font-serif font-semibold text-white mb-8">
           Trusted by 2,500+ Educators & Leading Institutions
         </h2>
         <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-white/90">

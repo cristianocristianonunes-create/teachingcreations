@@ -20,7 +20,7 @@ const V2AboutSection = () => (
           />
         </FadeIn>
         <FadeIn delay={0.15}>
-          <h3 className="font-serif text-2xl text-[#121212] mb-1">Erika Sun, Ed.D.</h3>
+          <h3 className="font-serif text-2xl font-bold text-[#121212] mb-1">Erika Sun, Ed.D.</h3>
           <p className="text-sm text-[#2F5233] font-medium font-sans mb-6">
             Educator · Framework Developer · Teaching Since 1997
           </p>
@@ -28,7 +28,7 @@ const V2AboutSection = () => (
             Erika Sun began teaching professionally at 16. Across nearly three decades, her work has spanned children, adolescents, and language-diverse populations. The Cycle of Thinking™ is not a theory developed in isolation; it's a framework forged in the classroom, refined through coaching thousands of educators, and designed to solve the real-world challenges you face every day.
           </p>
           <blockquote className="border-l-4 border-[#B8860B] pl-4 my-6">
-            <p className="text-base text-[#121212] italic font-serif leading-relaxed">
+            <p className="text-base text-[#121212] italic font-medium font-serif leading-relaxed">
               "While Harvard's Project Zero gave us the 'why' and John Hattie's Visible Learning gave us the 'what', The Cycle of Thinking™ finally delivers the 'how'—a practical, implementable framework for today's diverse classroom."
             </p>
           </blockquote>

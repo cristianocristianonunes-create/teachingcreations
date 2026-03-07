@@ -69,9 +69,9 @@ const SalesAnalytics = () => {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="text-2xl font-serif text-foreground">Sales & Analytics</h1>
+        <h1 className="text-2xl font-serif text-foreground">Analytics</h1>
         <p className="text-sm text-muted-foreground mt-1">
-          Overview of books, audience growth, and conversion sources
+          Audience growth, contact sources, and book catalog overview
         </p>
       </div>
 

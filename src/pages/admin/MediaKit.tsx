@@ -37,7 +37,7 @@ const MediaKit = () => {
     const content = sections
       .map((s) => `=== ${s.label.toUpperCase()} ===\n\n${s.content}`)
       .join("\n\n\n");
-    const fullContent = `TEACHING CREATIONS — MEDIA KIT\nErika Sun\n${"=".repeat(40)}\n\n${content}\n\n${"=".repeat(40)}\nWebsite: teachingcreations.lovable.app\nContact: erika@erikasun.com`;
+    const fullContent = `TEACHING CREATIONS — MEDIA KIT\nErika Sun\n${"=".repeat(40)}\n\n${content}\n\n${"=".repeat(40)}\nWebsite: teachingcreations.com\nContact: erika@erikasun.com`;
     const blob = new Blob([fullContent], { type: "text/plain" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
@@ -101,7 +101,7 @@ const MediaKit = () => {
         <div className="space-y-2 text-sm">
           <div className="flex items-center justify-between">
             <span className="text-muted-foreground">Website</span>
-            <span className="text-foreground">teachingcreations.lovable.app</span>
+            <span className="text-foreground">teachingcreations.com</span>
           </div>
           <div className="flex items-center justify-between">
             <span className="text-muted-foreground">Contact</span>

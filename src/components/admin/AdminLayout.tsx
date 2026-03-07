@@ -21,7 +21,7 @@ const navItems = [
   { label: "Content", path: "/admin/content", icon: FileText },
   { label: "Insights", path: "/admin/insights", icon: Lightbulb },
   { label: "Books", path: "/admin/books", icon: BookOpen },
-  { label: "Sales", path: "/admin/sales", icon: TrendingUp },
+  { label: "Analytics", path: "/admin/sales", icon: TrendingUp },
   { label: "Audience", path: "/admin/audience", icon: Users },
   { label: "PD Requests", path: "/admin/pd-requests", icon: GraduationCap },
   { label: "Testimonials", path: "/admin/testimonials", icon: MessageSquareQuote },

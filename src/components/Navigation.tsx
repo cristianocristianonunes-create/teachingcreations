@@ -33,7 +33,7 @@ const Navigation = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#F9F9F9]/95 backdrop-blur-sm border-b border-[#E0E0E0] shadow-sm">
       <nav className="container mx-auto flex items-center py-3 px-6 lg:px-8">
         <Link to="/" className="flex-shrink-0">
-          <img src={logoIcon} alt="Teaching Creations" className="h-36 w-auto object-contain" />
+          <img src={logoIcon} alt="Teaching Creations" className="h-20 w-auto object-contain" />
         </Link>
 
         {/* Desktop nav links — close to logo */}

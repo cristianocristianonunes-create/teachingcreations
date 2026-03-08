@@ -40,7 +40,7 @@ const V2Navigation = () => {
       <nav className="container mx-auto flex items-center py-3 px-6 lg:px-8">
         {/* Logo */}
         <Link to="/" className="flex-shrink-0">
-          <img src={logoIcon} alt="Teaching Creations" className="h-36 w-auto object-contain" />
+          <img src={logoIcon} alt="Teaching Creations" className="h-20 w-auto object-contain" />
         </Link>
 
         {/* Desktop nav links — close to logo */}

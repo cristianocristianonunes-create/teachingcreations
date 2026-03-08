@@ -4,7 +4,7 @@ import { usePageContent } from "@/hooks/usePageContent";
 const V2ProblemSection = () => {
   const { get } = usePageContent("home");
   const problems = [
-    { title: get("problem_card_1_title", "The Illusion of Engagement"), text: get("problem_card_1_text", "Your classroom is buzzing. Students are completing tasks. But when the prompts disappear, they collapse. You're not alone: 78% of educators report that student participation often masks a deep lack of independent thinking.") },
+    { title: get("problem_card_1_title", "The Illusion of Engagement"), text: get("problem_card_1_text", "Your classroom is buzzing. Students are completing tasks. But when the prompts disappear, they collapse. Visible participation is not the same as genuine thinking — and most classrooms are built to reward the former.") },
     { title: get("problem_card_2_title", "Assessments Without Transfer"), text: get("problem_card_2_text", "Students can summarize a text perfectly but can't explain the author's intent. They pass the test but fail to apply the knowledge next week. This is a sign of shallow processing, not deep learning.") },
     { title: get("problem_card_3_title", "Compliance Mistaken for Cognition"), text: get("problem_card_3_text", "We celebrate students who follow instructions perfectly. But following a recipe isn't the same as being a chef. True cognition is about designing the recipe, not just executing it.") },
   ];

@@ -19,7 +19,7 @@ const V2HeroSection = () => {
             {get("hero_headline", "Stop Mistaking Participation for Thinking.")}
           </h1>
           <p className="mt-6 text-lg text-[#555555] leading-relaxed max-w-lg font-sans">
-            {get("hero_subheadline", "The classroom-proven framework to develop truly independent learners, increase student autonomy by 40%, and reclaim your planning time.")}
+            {get("hero_subheadline", "The classroom-proven framework to develop truly independent learners — designed for K-12 educators working with multilingual and language-diverse students.")}
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row items-start gap-4">
@@ -34,7 +34,7 @@ const V2HeroSection = () => {
             href="#v2-social-proof"
             className="inline-block mt-3 text-sm text-[#2F5233] font-medium hover:underline underline-offset-4"
           >
-            {get("hero_social_proof", "Used by 2,500+ educators. See the evidence →")}
+            {get("hero_social_proof", "Feedback collected across multiple cohorts, Spring 2024 – Spring 2025 →")}
           </a>
         </FadeIn>
 

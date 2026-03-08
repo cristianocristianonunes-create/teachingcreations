@@ -12,7 +12,7 @@ const testimonials = [
   {
     headline: "The discussion sessions were enriching and mind opening.",
     text: "I felt a gap in some areas that I thought I knew. I was excited to get more ways on how to teach reading to my Multilingual learners.",
-    name: "",
+    name: "Alice Anyam",
     role: "High School ELD Teacher",
     org: "Fall 2024",
   },

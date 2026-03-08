@@ -10,8 +10,8 @@ import { usePageContent } from "@/hooks/usePageContent";
 const V2FaqSection = () => {
   const { get } = usePageContent("home");
   const faqs = [
-    { q: get("faq_1_q", "What is the investment for professional development?"), a: get("faq_1_a", "We offer customized packages starting from $5,000 for single-day workshops to comprehensive multi-year partnerships. The best first step is a 15-minute call to assess your needs.") },
-    { q: get("faq_2_q", "How long does it take to see results in the classroom?"), a: get("faq_2_a", "Educators report applying strategies the same week, with measurable improvements in student autonomy observed within 8-12 weeks.") },
+    { q: get("faq_1_q", "What is the investment for professional development?"), a: get("faq_1_a", "Pricing depends on the format, duration, and scope of the engagement. Reach out through the contact form and we will respond with a customized proposal within 48 hours.") },
+    { q: get("faq_2_q", "How long does it take to see results in the classroom?"), a: get("faq_2_a", "Many educators report applying strategies the very same week. Documented feedback from multiple cohorts (Spring 2024 – Spring 2025) shows that participants leave sessions with concrete, immediately usable tools.") },
     { q: get("faq_3_q", "Does this work for non-literacy teachers (e.g., Math, Science)?"), a: get("faq_3_a", "Absolutely. The Cycle of Thinking™ is a literacy framework that applies to all content areas because it focuses on how students access, process, and express knowledge, regardless of the subject.") },
     { q: get("faq_4_q", "What makes this different from other teaching frameworks?"), a: get("faq_4_a", "We are the practical bridge between academic theory (like Harvard's Project Zero) and data-driven research (like Hattie's Visible Learning). Our framework was born in the classroom and is 100% focused on implementation.") },
   ];

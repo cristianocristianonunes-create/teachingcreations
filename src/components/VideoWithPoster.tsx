@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { Play } from "lucide-react";
-import logo from "@/assets/logo-transparent.png";
+import logo from "@/assets/logo-full-transparent.png";
 
 interface VideoWithPosterProps {
   src: string;
@@ -32,7 +32,7 @@ const VideoWithPoster = ({ src, className }: VideoWithPosterProps) => {
           isPlaying ? "opacity-0 pointer-events-none" : "opacity-100"
         }`}
       >
-        <img src={logo} alt="Teaching Creations" className="w-28 md:w-36 opacity-90" />
+        <img src={logo} alt="Teaching Creations" className="w-64 md:w-80 opacity-90" />
 
         <h3 className="text-2xl md:text-3xl font-serif text-background tracking-tight">
           Making Thinking <span className="italic text-primary">Visible.</span>

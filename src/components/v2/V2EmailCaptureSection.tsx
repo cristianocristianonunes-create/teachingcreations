@@ -80,7 +80,7 @@ const V2EmailCaptureSection = () => {
           </ul>
 
           <p className="text-sm text-[#B8860B] font-medium font-sans mb-8">
-            {get("email_bonus", "Bonus: When you download Chapter One this week, you'll also receive our \"5 Activities to Make Thinking Visible\" guide (a $29 value).")}
+            {get("email_bonus", "")}
           </p>
 
           {submitted ? (

@@ -29,7 +29,7 @@ const V2PdSection = () => {
           ))}
         </ul>
         <p className="text-sm text-white/50 font-sans mb-8">
-          {get("pd_disclaimer", "Due to the in-depth nature of our coaching, we limit our partnerships to 5 new districts per semester. Spots are limited — inquire early to secure your district's place.")}
+          {get("pd_disclaimer", "Due to the in-depth nature of each engagement, availability is limited. Reach out early to discuss fit and scheduling.")}
         </p>
         <div>
           <Link

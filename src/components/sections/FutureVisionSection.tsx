@@ -14,7 +14,7 @@ const FutureVisionSection = () => (
       <FadeIn delay={0.1}>
         <div className="space-y-4 text-sm text-muted-foreground leading-relaxed font-sans">
           <p>
-            Teaching Creations is evolving into a central platform for educators who believe
+            Teaching Creations is evolving into a platform for educators who believe
             that thinking can — and should — be taught deliberately.
           </p>
           <p>
@@ -23,7 +23,7 @@ const FutureVisionSection = () => (
             of classroom-tested resources will expand the reach of the framework.
           </p>
           <p>
-            This is not a product launch. It is a growing educational movement rooted in
+            This is not a product launch. It is a body of work rooted in
             practice, shaped by real classrooms, and driven by a single conviction:
             every learner deserves the tools to think independently.
           </p>

@@ -50,7 +50,7 @@ const V2Footer = () => (
             Free Resource
           </p>
           <p className="text-sm text-white/60 font-sans leading-relaxed mb-4">
-            Get the framework that has transformed 2,500+ classrooms.
+            Get the framework built for today's diverse classroom.
           </p>
           <a
             href="#v2-email-capture"

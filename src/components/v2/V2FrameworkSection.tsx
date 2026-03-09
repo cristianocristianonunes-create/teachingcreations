@@ -18,7 +18,7 @@ const V2FrameworkSection = () => {
           {get("model_title", "The Cycle of Thinking™: Your Architecture for Autonomy")}
         </h2>
         <p className="text-base text-[#555555] font-sans max-w-3xl mx-auto leading-relaxed mb-12">
-          {get("model_body", "This isn't another teaching trend. It's a proprietary, 3-part system that makes deep thinking visible, measurable, and teachable. It's the bridge between the theory of Harvard's Project Zero and the data of John Hattie's Visible Learning.")}
+          {get("model_body", "This isn't another teaching trend. It's a proprietary, 3-part system that makes deep thinking visible, measurable, and teachable — informed by the theory of Harvard's Project Zero and the data of John Hattie's Visible Learning.")}
         </p>
       </FadeIn>
 

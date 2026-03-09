@@ -208,7 +208,7 @@ const Speaking = () => {
               Ready to Book Erika?
             </h2>
             <p className="text-base text-[#555555] font-sans leading-relaxed mb-8">
-              Due to demand, Erika accepts a limited number of speaking engagements per semester.
+              Erika accepts a limited number of speaking engagements per semester.
               Reach out early to check availability for your event.
             </p>
             <Link

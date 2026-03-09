@@ -53,7 +53,7 @@ const V2SpeakingSection = () => {
         <FadeIn>
           <div className="bg-[#F9F9F9] border border-[#E0E0E0] p-8 text-center">
             <p className="text-sm text-[#555555] font-sans mb-6 max-w-xl mx-auto">
-              {get("speaking_formats", "Available for keynotes (45–90 min), half-day workshops, full-day institutes, and multi-session series. Delivery in English and Spanish.")}
+              {get("speaking_formats", "Available for keynotes (45–90 min), half-day workshops, full-day institutes, and multi-session series.")}
             </p>
             <Link
               to="/speaking"

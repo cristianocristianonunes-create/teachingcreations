@@ -80,7 +80,7 @@ const Speaking = () => {
               Bring The Cycle of Thinking™ to Your Stage
             </h1>
             <p className="text-lg text-[#555555] font-sans leading-relaxed mb-8">
-              Erika Sun delivers evidence-based, immediately applicable sessions for educators, instructional leaders, and district teams — in English and Spanish.
+              Erika Sun delivers evidence-based, immediately applicable sessions for educators, instructional leaders, and district teams.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
@@ -194,7 +194,7 @@ const Speaking = () => {
               ))}
             </div>
             <p className="text-center text-sm text-white/50 font-sans mt-8">
-              Available in English and Spanish. Virtual and in-person delivery.
+              Virtual and in-person delivery.
             </p>
           </FadeIn>
         </div>

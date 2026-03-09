@@ -14,8 +14,7 @@ const OriginStorySection = () => (
       <FadeIn delay={0.1}>
         <div className="space-y-4 text-sm text-muted-foreground leading-relaxed font-sans">
           <p>
-            Erika Sun began teaching professionally in 1997, at age 16. What started as an
-            early entry into education became a lifelong practice of observing how people learn —
+            Erika Sun began teaching professionally in 1997. What became a lifelong practice of observing how people learn —
             across ages, languages, and disciplines.
           </p>
           <p>

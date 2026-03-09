@@ -28,7 +28,7 @@ const V2AboutSection = () => {
             {get("about_role", "Educator · Framework Developer · Teaching Since 1997")}
           </p>
           <p className="text-base text-[#555555] leading-relaxed font-sans mb-4">
-            {get("about_bio", "Erika Sun began teaching professionally at 16. Across nearly three decades, her work has spanned children, adolescents, and language-diverse populations. The Cycle of Thinking™ is not a theory developed in isolation; it's a framework forged in the classroom, refined through coaching thousands of educators, and designed to solve the real-world challenges you face every day.")}
+            {get("about_bio", "Across nearly three decades, Erika Sun's work has spanned children, adolescents, and language-diverse populations. The Cycle of Thinking™ is not a theory developed in isolation; it's a framework forged in the classroom, refined through coaching thousands of educators, and designed to solve the real-world challenges you face every day.")}
           </p>
           <blockquote className="border-l-4 border-[#B8860B] pl-4 my-6">
             <p className="text-base text-[#121212] italic font-medium font-serif leading-relaxed">

@@ -22,7 +22,7 @@ const AuthorStorySection = () => (
         </p>
         <div className="space-y-3 text-sm text-muted-foreground leading-relaxed font-sans">
           <p>
-           Erika Sun began teaching professionally at 16. Across <span className="text-foreground font-medium">nearly three decades</span> of experience, her
+           Across <span className="text-foreground font-medium">nearly three decades</span> of experience, Erika Sun's
             work has spanned children, adolescents, adults, and language-diverse populations — from
             proficiency coaching to literacy instruction and teacher development.
           </p>

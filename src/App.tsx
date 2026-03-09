@@ -30,8 +30,14 @@ import MediaKit from "./pages/admin/MediaKit";
 import SettingsPage from "./pages/admin/SettingsPage";
 import IndexV2 from "./pages/IndexV2";
 import Speaking from "./pages/Speaking";
+import { useTrackingScripts } from "./hooks/useTrackingScripts";
 
 const queryClient = new QueryClient();
+
+const TrackingScripts = () => {
+  useTrackingScripts();
+  return null;
+};
 
 const hostname = window.location.hostname;
 const isMainDomain =
@@ -50,6 +56,7 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
+        <TrackingScripts />
         <Toaster />
         <Sonner />
         <BrowserRouter>

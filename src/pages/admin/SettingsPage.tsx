@@ -6,6 +6,7 @@ import { toast } from "@/hooks/use-toast";
 import { Save, Shield, Palette, Link2, Users, Trash2, BookOpen } from "lucide-react";
 import ChapterSettings from "@/components/admin/ChapterSettings";
 import type { Tables } from "@/integrations/supabase/types";
+import type { TrackingPixels } from "@/hooks/useTrackingScripts";
 
 type UserRole = Tables<"user_roles">;
 
@@ -111,29 +112,82 @@ const GeneralSettings = () => {
 };
 
 const IntegrationsSettings = () => {
-  const integrations = [
-    { name: "Stripe", description: "Process book sales and payments", status: "Not connected", actionLabel: "Connect" },
-    { name: "Email Provider", description: "Send newsletters and notifications", status: "Not connected", actionLabel: "Configure" },
-    { name: "Analytics", description: "Track website traffic and conversions", status: "Not connected", actionLabel: "Configure" },
-    { name: "Video Hosting", description: "Manage VSL and training videos", status: "Not connected", actionLabel: "Configure" },
+  const queryClient = useQueryClient();
+  const [form, setForm] = useState<TrackingPixels>({});
+
+  const { isLoading } = useQuery({
+    queryKey: ["tracking-pixels"],
+    queryFn: async () => {
+      const { data } = await supabase
+        .from("site_settings")
+        .select("value")
+        .eq("key", "tracking_pixels")
+        .maybeSingle();
+      const pixels = (data?.value as TrackingPixels) || {};
+      setForm(pixels);
+      return pixels;
+    },
+  });
+
+  const saveMutation = useMutation({
+    mutationFn: async (pixels: TrackingPixels) => {
+      const { error } = await supabase
+        .from("site_settings")
+        .upsert({ key: "tracking_pixels", value: pixels as never }, { onConflict: "key" });
+      if (error) throw error;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["tracking-pixels"] });
+      toast({ title: "Tracking pixels saved" });
+    },
+    onError: (err: Error) => {
+      toast({ title: "Error saving", description: err.message, variant: "destructive" });
+    },
+  });
+
+  const fields: { key: keyof TrackingPixels; label: string; placeholder: string }[] = [
+    { key: "facebook_pixel_id", label: "Facebook Pixel ID", placeholder: "e.g. 1234567890123456" },
+    { key: "google_analytics_id", label: "Google Analytics (GA4) ID", placeholder: "e.g. G-XXXXXXXXXX" },
+    { key: "google_tag_manager_id", label: "Google Tag Manager ID", placeholder: "e.g. GTM-XXXXXXX" },
+    { key: "tiktok_pixel_id", label: "TikTok Pixel ID", placeholder: "e.g. CXXXXXXXXXXXXXXX" },
   ];
 
+  if (isLoading) return <div className="text-sm text-muted-foreground">Loading...</div>;
+
   return (
-    <div className="max-w-xl space-y-3">
-      {integrations.map((int) => (
-        <div key={int.name} className="bg-card border border-border rounded-lg p-4 flex items-center justify-between">
-          <div>
-            <p className="text-sm font-medium text-foreground">{int.name}</p>
-            <p className="text-xs text-muted-foreground mt-0.5">{int.description}</p>
-          </div>
-          <div className="flex items-center gap-3">
-            <span className="text-xs text-muted-foreground">{int.status}</span>
-            <button className="px-3 py-1.5 border border-border text-xs text-foreground rounded hover:bg-muted transition-colors">
-              {int.actionLabel}
-            </button>
-          </div>
+    <div className="max-w-xl space-y-6">
+      <div className="bg-card border border-border rounded-lg p-5">
+        <h3 className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-4">
+          Tracking Pixels
+        </h3>
+        <p className="text-xs text-muted-foreground mb-5">
+          Add your pixel IDs below. Leave blank to disable. Scripts are injected automatically when a value is saved.
+        </p>
+        <div className="space-y-4">
+          {fields.map(({ key, label, placeholder }) => (
+            <div key={key}>
+              <label className="block text-xs font-medium text-muted-foreground uppercase tracking-wider mb-1.5">
+                {label}
+              </label>
+              <input
+                type="text"
+                value={form[key] || ""}
+                placeholder={placeholder}
+                onChange={(e) => setForm((prev) => ({ ...prev, [key]: e.target.value }))}
+                className="w-full px-3 py-2.5 bg-background border border-border rounded text-sm text-foreground focus:outline-none focus:ring-1 focus:ring-primary font-mono"
+              />
+            </div>
+          ))}
         </div>
-      ))}
+        <button
+          onClick={() => saveMutation.mutate(form)}
+          disabled={saveMutation.isPending}
+          className="mt-6 flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground text-xs font-medium rounded hover:bg-primary/90 transition-colors disabled:opacity-50"
+        >
+          <Save size={13} />
+          {saveMutation.isPending ? "Saving..." : "Save Pixels"}
+        </button>
+      </div>
     </div>
   );
 };

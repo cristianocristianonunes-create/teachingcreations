@@ -1,19 +1,60 @@
 
 
-## Plano: Adicionar o Segundo Livro à Página /books
+## Plano: Corrigir site em branco nos domínios de produção
 
-### Problema
-A página `/books` (componente `src/pages/Books.tsx`) só exibe o primeiro livro. O segundo livro ("Strategic Access") precisa ser adicionado.
+### Problema identificado
 
-### Mudanças
+O componente `ComingSoon` usa `useNavigate()` do React Router, mas no `App.tsx`, quando o hostname e `teachingcreations.com`, ele e renderizado **antes** do `<BrowserRouter>`, causando um erro fatal (tela branca).
 
-**`src/pages/Books.tsx`:**
-- Importar `book-2-cover.png`
-- Alterar título da seção para "The Books Behind the Framework"
-- Duplicar o bloco grid existente para incluir o segundo livro com:
-  - Título: "Strategic Access: Teaching the Interpretive Phase of The Cycle of Thinking™"
-  - Descrição focada na fase interpretativa
-  - Link: `https://a.co/d/06puS62e`
-  - Capa: `book-2-cover.png`
-- Manter o layout `grid md:grid-cols-[240px_1fr]` para cada livro, separados por espaçamento vertical
+```text
+App.tsx fluxo atual:
+
+  if (isMainDomain) {
+    return <ComingSoon />   <-- SEM BrowserRouter! useNavigate() crasha
+  }
+
+  return (
+    <BrowserRouter>         <-- BrowserRouter so existe aqui
+      ...
+    </BrowserRouter>
+  )
+```
+
+### Solucao
+
+**Arquivo:** `src/App.tsx`
+
+Mover o `<BrowserRouter>` para envolver TODA a aplicacao, incluindo o bloco `ComingSoon`:
+
+```text
+App.tsx fluxo corrigido:
+
+  return (
+    <QueryClientProvider>
+      <TooltipProvider>
+        <BrowserRouter>          <-- Agora envolve tudo
+          {isMainDomain ? (
+            <ComingSoon />       <-- Funciona com useNavigate()
+          ) : (
+            <Routes>...</Routes>
+          )}
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  )
+```
+
+### Arquivos modificados
+
+- `src/App.tsx` -- Reestruturar para que BrowserRouter envolva todo o app
+
+### Resultado esperado
+
+- `teachingcreations.com` -- Exibe a pagina Coming Soon corretamente (sem tela branca)
+- `testing.teachingcreations.com` e preview -- Exibe a landing page completa
+- O botao "Admin" na pagina Coming Soon funciona corretamente
+
+### Proximo passo apos aprovacao
+
+Apos implementar, sera necessario clicar em **Publish > Update** para que as mudancas aparecam nos dominios reais.
 

@@ -32,7 +32,7 @@ const V2BookSection = () => {
             {get("book_description_2", "Move from simple reading interaction to meaningful writing — with coherence across every instructional layer.")}
           </p>
           <a
-            href="https://a.co/d/05pVmQSf"
+            href="https://a.co/d/0cTCikQ0"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-8 py-4 bg-[#B8860B] text-white text-sm font-semibold tracking-wide hover:bg-[#9A7209] transition-colors"

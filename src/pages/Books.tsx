@@ -37,7 +37,7 @@ const Books = () => {
                 </p>
                 <div className="flex flex-wrap items-center gap-4">
                   <a
-                    href="https://a.co/d/05pVmQSf"
+                    href="https://a.co/d/0cTCikQ0"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-6 py-2.5 border border-foreground text-foreground text-xs font-medium tracking-widest uppercase transition-colors hover:bg-foreground hover:text-background"

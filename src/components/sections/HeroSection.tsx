@@ -40,7 +40,7 @@ const HeroSection = () => {
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-5">
             <a
-              href="https://a.co/d/05pVmQSf"
+              href="https://a.co/d/0cTCikQ0"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-8 py-3.5 border border-foreground text-foreground text-sm font-medium tracking-widest uppercase transition-colors hover:bg-foreground hover:text-background"

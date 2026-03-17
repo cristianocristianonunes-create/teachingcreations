@@ -1,60 +1,29 @@
 
 
-## Plano: Corrigir site em branco nos domínios de produção
+## Plano: Adicionar o Segundo Livro ("Strategic Access") à Landing Page V2
 
-### Problema identificado
+### Contexto
+A Erika lançou o segundo livro, "Strategic Access — Teaching the Interpretive Phase of The Cycle of Thinking™ in Multilingual Classrooms". Preciso integrá-lo sem quebrar o layout existente.
 
-O componente `ComingSoon` usa `useNavigate()` do React Router, mas no `App.tsx`, quando o hostname e `teachingcreations.com`, ele e renderizado **antes** do `<BrowserRouter>`, causando um erro fatal (tela branca).
+### Recomendação de Posicionamento
 
-```text
-App.tsx fluxo atual:
+A melhor abordagem é **expandir a seção de livros (V2BookSection)** para mostrar os dois livros lado a lado em um layout de grid. O título da seção muda de "The Framework, In Your Hands." para algo como **"The Books Behind the Framework"** e cada livro aparece como um card com sua capa, título, descrição curta e botão de compra na Amazon.
 
-  if (isMainDomain) {
-    return <ComingSoon />   <-- SEM BrowserRouter! useNavigate() crasha
-  }
+Isso mantém a Hero limpa (apenas o livro 1 como visual principal) e dá destaque adequado aos dois livros na seção dedicada.
 
-  return (
-    <BrowserRouter>         <-- BrowserRouter so existe aqui
-      ...
-    </BrowserRouter>
-  )
-```
+### Mudanças Técnicas
 
-### Solucao
+1. **Copiar a imagem** do segundo livro para `src/assets/book-2-cover.png`
 
-**Arquivo:** `src/App.tsx`
+2. **Reescrever `V2BookSection.tsx`** com layout de 2 colunas:
+   - Cada coluna: capa do livro (com sombra) + título + descrição curta + botão "Purchase on Amazon →"
+   - Livro 1: mantém os dados atuais (link `https://a.co/d/0cTCikQ0`)
+   - Livro 2: "Strategic Access" com link `https://a.co/d/06puS62e`, descrição focada na fase interpretativa do Cycle of Thinking™
+   - Título da seção: "The Books Behind the Framework"
+   - Em mobile, os livros empilham verticalmente
 
-Mover o `<BrowserRouter>` para envolver TODA a aplicacao, incluindo o bloco `ComingSoon`:
+3. **Nenhuma mudança** na Hero, Footer, ou outras seções.
 
-```text
-App.tsx fluxo corrigido:
-
-  return (
-    <QueryClientProvider>
-      <TooltipProvider>
-        <BrowserRouter>          <-- Agora envolve tudo
-          {isMainDomain ? (
-            <ComingSoon />       <-- Funciona com useNavigate()
-          ) : (
-            <Routes>...</Routes>
-          )}
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
-  )
-```
-
-### Arquivos modificados
-
-- `src/App.tsx` -- Reestruturar para que BrowserRouter envolva todo o app
-
-### Resultado esperado
-
-- `teachingcreations.com` -- Exibe a pagina Coming Soon corretamente (sem tela branca)
-- `testing.teachingcreations.com` e preview -- Exibe a landing page completa
-- O botao "Admin" na pagina Coming Soon funciona corretamente
-
-### Proximo passo apos aprovacao
-
-Apos implementar, sera necessario clicar em **Publish > Update** para que as mudancas aparecam nos dominios reais.
+### Resultado
+Seção de livros com 2 cards equilibrados, mantendo a estética visual e a hierarquia de conversão existente.
 

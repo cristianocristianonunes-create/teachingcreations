@@ -28,7 +28,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 { label: "The Framework", path: "/cycle-of-thinking" },
                 { label: "About Erika", path: "/about" },
                 { label: "Contact", path: "/contact" },
-                { label: "Insights", path: "/insights" },
+                
               ].map((l) => (
                 <Link
                   key={l.path}

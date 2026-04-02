@@ -9,7 +9,7 @@ import Index from "./pages/Index";
 import CycleOfThinking from "./pages/CycleOfThinking";
 import Books from "./pages/Books";
 import About from "./pages/About";
-import Insights from "./pages/Insights";
+
 import Contact from "./pages/Contact";
 import Evidence from "./pages/Evidence";
 import ProfessionalDevelopmentFeedback from "./pages/ProfessionalDevelopmentFeedback";
@@ -69,7 +69,7 @@ const App = () => {
             <Route path="/teste/cycle-of-thinking" element={<TestePrefix><CycleOfThinking /></TestePrefix>} />
             <Route path="/teste/books" element={<TestePrefix><Books /></TestePrefix>} />
             <Route path="/teste/about" element={<TestePrefix><About /></TestePrefix>} />
-            <Route path="/teste/insights" element={<TestePrefix><Insights /></TestePrefix>} />
+            
             <Route path="/teste/contact" element={<TestePrefix><Contact /></TestePrefix>} />
             <Route path="/teste/evidence" element={<TestePrefix><Evidence /></TestePrefix>} />
 
@@ -78,7 +78,7 @@ const App = () => {
             <Route path="/teste-v2/cycle-of-thinking" element={<TesteV2Prefix><CycleOfThinking /></TesteV2Prefix>} />
             <Route path="/teste-v2/books" element={<TesteV2Prefix><Books /></TesteV2Prefix>} />
             <Route path="/teste-v2/about" element={<TesteV2Prefix><About /></TesteV2Prefix>} />
-            <Route path="/teste-v2/insights" element={<TesteV2Prefix><Insights /></TesteV2Prefix>} />
+            
             <Route path="/teste-v2/contact" element={<TesteV2Prefix><Contact /></TesteV2Prefix>} />
             <Route path="/teste-v2/evidence" element={<TesteV2Prefix><Evidence /></TesteV2Prefix>} />
 
@@ -86,7 +86,7 @@ const App = () => {
             <Route path="/cycle-of-thinking" element={<CycleOfThinking />} />
             <Route path="/books" element={<Books />} />
             <Route path="/about" element={<About />} />
-            <Route path="/insights" element={<Insights />} />
+            
             <Route path="/contact" element={<Contact />} />
             <Route path="/evidence" element={<Evidence />} />
             <Route path="/speaking" element={<Speaking />} />

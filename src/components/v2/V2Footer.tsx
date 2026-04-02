@@ -22,7 +22,7 @@ const V2Footer = () => (
             { label: "The Framework", path: "/cycle-of-thinking" },
             { label: "About Erika", path: "/about" },
             { label: "Contact", path: "/contact" },
-            { label: "Insights", path: "/insights" },
+            
           ].map((l) => (
             <Link
               key={l.path}
@@ -34,15 +34,6 @@ const V2Footer = () => (
           ))}
         </div>
 
-        {/* Latest Insights */}
-        <div>
-          <p className="text-xs tracking-widest uppercase text-white/40 mb-3 font-sans font-medium">
-            Latest Insights
-          </p>
-          <p className="text-sm text-white/50 font-sans">
-            New articles coming soon. Stay tuned.
-          </p>
-        </div>
 
         {/* Free Resource */}
         <div>

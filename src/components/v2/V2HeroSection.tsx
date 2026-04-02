@@ -19,7 +19,7 @@ const V2HeroSection = () => {
             {get("hero_headline", "Stop Mistaking Participation for Thinking.")}
           </h1>
           <p className="mt-6 text-lg text-[#555555] leading-relaxed max-w-lg font-sans">
-            {get("hero_subheadline", "The classroom-proven framework to develop truly independent learners — designed for K-12 educators working with multilingual and language-diverse students.")}
+            {get("hero_subheadline", "The classroom-proven framework to develop truly independent learners — designed for educators working with multilingual and language-diverse students.")}
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row items-start gap-4">

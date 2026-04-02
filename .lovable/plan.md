@@ -1,60 +1,53 @@
 
 
-## Plano: Corrigir site em branco nos domínios de produção
+## Plano: Remover datas específicas e rebalancear foco para adultos
 
-### Problema identificado
+### Problema
+1. **Datas "Spring 2024 – Spring 2025"**: Erika não gosta. Precisam ser substituídas por linguagem baseada em experiência.
+2. **Foco em adultos**: O programa atende ambos, mas adultos devem ter mais destaque. K-12 pode ser mencionado como contexto de aplicação, não como público exclusivo.
 
-O componente `ComingSoon` usa `useNavigate()` do React Router, mas no `App.tsx`, quando o hostname e `teachingcreations.com`, ele e renderizado **antes** do `<BrowserRouter>`, causando um erro fatal (tela branca).
+### Arquivos impactados e mudanças
 
-```text
-App.tsx fluxo atual:
+**1. `src/components/sections/InstitutionalProofStrip.tsx`**
+- `"Longitudinal feedback collected Spring 2024 – Spring 2025"` → `"Longitudinal feedback collected across multiple cohorts"`
+- `"Focused on K–12 multilingual literacy instruction"` → `"Focused on multilingual literacy instruction for educators"`
 
-  if (isMainDomain) {
-    return <ComingSoon />   <-- SEM BrowserRouter! useNavigate() crasha
-  }
+**2. `src/components/v2/V2SocialProofStrip.tsx`**
+- Fallback `"Feedback Collected Spring 2024 – Spring 2025"` → `"Feedback Collected Across Multiple Cohorts"`
+- Fallback `"Focused on K–12 multilingual literacy instruction"` → `"Focused on multilingual literacy instruction for educators"`
 
-  return (
-    <BrowserRouter>         <-- BrowserRouter so existe aqui
-      ...
-    </BrowserRouter>
-  )
-```
+**3. `src/components/v2/V2HeroSection.tsx`**
+- Fallback `"Feedback collected across multiple cohorts, Spring 2024 – Spring 2025 →"` → `"Feedback collected across multiple educator cohorts →"`
+- Fallback `"FOR K-12 EDUCATORS WHOSE STUDENTS..."` → `"FOR EDUCATORS WHOSE STUDENTS ARE DROWNING IN BUSYWORK"`
+- Fallback subheadline: remover "K-12", manter "educators working with multilingual and language-diverse students"
 
-### Solucao
+**4. `src/components/sections/HeroSection.tsx`**
+- `"For K–12 educators working with multilingual learners"` → `"For educators working with multilingual learners"`
 
-**Arquivo:** `src/App.tsx`
+**5. `src/components/sections/InstitutionalEvidenceSection.tsx`**
+- Remover `"Spring 2024 through Spring 2025"` → `"multiple semesters"`
+- Rodapé: `"Collected from four semesters..."` → `"Collected across multiple semesters of professional development feedback."`
 
-Mover o `<BrowserRouter>` para envolver TODA a aplicacao, incluindo o bloco `ComingSoon`:
+**6. `src/pages/Speaking.tsx`**
+- Remover stat `"4" / "Semesters of Documented PD"` com a descrição Spring 2024–2025. Substituir por `"Multiple" / "Cohorts Trained"` com descrição genérica.
+- `"K-12 Educators & Curriculum Leaders"` → `"Educators & Curriculum Leaders"`
+- Manter "K–12" stat card mas mudar label para `"Multilingual Literacy Focus"` sem menção K-12
 
-```text
-App.tsx fluxo corrigido:
+**7. `src/components/v2/V2FaqSection.tsx`**
+- Fallback FAQ 2: remover `"(Spring 2024 – Spring 2025)"` → `"across multiple cohorts"`
 
-  return (
-    <QueryClientProvider>
-      <TooltipProvider>
-        <BrowserRouter>          <-- Agora envolve tudo
-          {isMainDomain ? (
-            <ComingSoon />       <-- Funciona com useNavigate()
-          ) : (
-            <Routes>...</Routes>
-          )}
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
-  )
-```
+**8. `src/components/sections/ProblemSection.tsx`**
+- `"For K–12 educators"` → `"For educators"`
 
-### Arquivos modificados
+**9. `src/components/sections/AuthorSection.tsx`**
+- `"Professional development facilitator for K–12 districts"` → `"Professional development facilitator for school districts and adult learning programs"`
 
-- `src/App.tsx` -- Reestruturar para que BrowserRouter envolva todo o app
+**10. `src/components/v2/V2AboutSection.tsx`**
+- Fallback: `"across K–12 districts"` → `"across school districts and adult learning programs"`
 
-### Resultado esperado
-
-- `teachingcreations.com` -- Exibe a pagina Coming Soon corretamente (sem tela branca)
-- `testing.teachingcreations.com` e preview -- Exibe a landing page completa
-- O botao "Admin" na pagina Coming Soon funciona corretamente
-
-### Proximo passo apos aprovacao
-
-Apos implementar, sera necessario clicar em **Publish > Update** para que as mudancas aparecam nos dominios reais.
+### Resumo
+- ~10 arquivos com edições cirúrgicas de texto
+- Nenhuma mudança de layout ou estrutura
+- Todas as datas específicas removidas, substituídas por linguagem de experiência
+- K-12 deixa de ser o protagonista; "educators" passa a ser o termo principal, com K-12 aparecendo apenas como contexto secundário quando necessário
 

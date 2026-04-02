@@ -78,7 +78,7 @@ const App = () => {
             <Route path="/teste-v2/cycle-of-thinking" element={<TesteV2Prefix><CycleOfThinking /></TesteV2Prefix>} />
             <Route path="/teste-v2/books" element={<TesteV2Prefix><Books /></TesteV2Prefix>} />
             <Route path="/teste-v2/about" element={<TesteV2Prefix><About /></TesteV2Prefix>} />
-            <Route path="/teste-v2/insights" element={<TesteV2Prefix><Insights /></TesteV2Prefix>} />
+            
             <Route path="/teste-v2/contact" element={<TesteV2Prefix><Contact /></TesteV2Prefix>} />
             <Route path="/teste-v2/evidence" element={<TesteV2Prefix><Evidence /></TesteV2Prefix>} />
 

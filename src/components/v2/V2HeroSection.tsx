@@ -13,7 +13,7 @@ const V2HeroSection = () => {
             className="text-xs tracking-[0.2em] uppercase text-[#555555] mb-4"
             style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "14px" }}
           >
-            {get("hero_label", "FOR K-12 EDUCATORS WHOSE STUDENTS ARE DROWNING IN BUSYWORK")}
+            {get("hero_label", "FOR EDUCATORS WHOSE STUDENTS ARE DROWNING IN BUSYWORK")}
           </p>
           <h1 className="text-4xl md:text-5xl lg:text-[56px] font-serif font-bold leading-tight text-[#121212]">
             {get("hero_headline", "Stop Mistaking Participation for Thinking.")}

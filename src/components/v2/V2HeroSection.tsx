@@ -13,13 +13,13 @@ const V2HeroSection = () => {
             className="text-xs tracking-[0.2em] uppercase text-[#555555] mb-4"
             style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "14px" }}
           >
-            {get("hero_label", "FOR K-12 EDUCATORS WHOSE STUDENTS ARE DROWNING IN BUSYWORK")}
+            {get("hero_label", "FOR EDUCATORS WHOSE STUDENTS ARE DROWNING IN BUSYWORK")}
           </p>
           <h1 className="text-4xl md:text-5xl lg:text-[56px] font-serif font-bold leading-tight text-[#121212]">
             {get("hero_headline", "Stop Mistaking Participation for Thinking.")}
           </h1>
           <p className="mt-6 text-lg text-[#555555] leading-relaxed max-w-lg font-sans">
-            {get("hero_subheadline", "The classroom-proven framework to develop truly independent learners — designed for K-12 educators working with multilingual and language-diverse students.")}
+            {get("hero_subheadline", "The classroom-proven framework to develop truly independent learners — designed for educators working with multilingual and language-diverse students.")}
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row items-start gap-4">
@@ -34,7 +34,7 @@ const V2HeroSection = () => {
             href="#v2-social-proof"
             className="inline-block mt-3 text-sm text-[#2F5233] font-medium hover:underline underline-offset-4"
           >
-            {get("hero_social_proof", "Feedback collected across multiple cohorts, Spring 2024 – Spring 2025 →")}
+            {get("hero_social_proof", "Feedback collected across multiple educator cohorts →")}
           </a>
         </FadeIn>
 

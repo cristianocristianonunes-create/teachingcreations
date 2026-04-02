@@ -7,7 +7,7 @@ const credentials = [
   "Experience across children, adolescents, adults, and multilingual learners",
   "Proficiency coaching, literacy instruction, and teacher development",
   "Published author on cognitive access and structured expression",
-  "Professional development facilitator for K–12 districts",
+  "Professional development facilitator for school districts and adult learning programs",
 ];
 
 const AuthorSection = () => (

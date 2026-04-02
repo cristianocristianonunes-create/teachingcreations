@@ -34,8 +34,7 @@ const InstitutionalEvidenceSection = () => (
           What Educators Experience After Training
         </h2>
         <p className="text-sm text-muted-foreground font-sans leading-relaxed mb-3">
-          Patterns emerging across <span className="text-foreground font-medium">four semesters</span> of professional development
-          feedback — Spring 2024 through Spring 2025.
+          Patterns emerging across <span className="text-foreground font-medium">multiple semesters</span> of professional development feedback.
         </p>
         <p className="text-xs text-muted-foreground/70 font-sans mb-10">
           Collected across longitudinal professional learning cycles.
@@ -57,7 +56,7 @@ const InstitutionalEvidenceSection = () => (
       </div>
       <FadeIn delay={0.4}>
         <p className="text-xs text-muted-foreground/60 font-sans mt-8 text-center italic">
-          Collected from four semesters of professional development feedback, Spring 2024 to Spring 2025.
+          Collected across multiple semesters of professional development feedback.
         </p>
       </FadeIn>
     </div>

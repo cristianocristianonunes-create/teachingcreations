@@ -17,11 +17,11 @@ const V2SocialProofStrip = () => {
           </span>
           <span className="text-white/30 hidden md:inline">|</span>
           <span className="text-sm font-semibold tracking-wider uppercase" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
-            {get("social_stat_3", "Feedback Collected Spring 2024 – Spring 2025")}
+            {get("social_stat_3", "Feedback Collected Across Multiple Cohorts")}
           </span>
         </div>
         <p className="mt-6 text-sm text-white/50 font-sans">
-          {get("social_institutions", "Focused on K–12 multilingual literacy instruction")}
+          {get("social_institutions", "Focused on multilingual literacy instruction for educators")}
         </p>
       </FadeIn>
     </div>

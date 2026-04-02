@@ -34,8 +34,7 @@ const InstitutionalEvidenceSection = () => (
           What Educators Experience After Training
         </h2>
         <p className="text-sm text-muted-foreground font-sans leading-relaxed mb-3">
-          Patterns emerging across <span className="text-foreground font-medium">four semesters</span> of professional development
-          feedback — Spring 2024 through Spring 2025.
+          Patterns emerging across <span className="text-foreground font-medium">multiple semesters</span> of professional development feedback.
         </p>
         <p className="text-xs text-muted-foreground/70 font-sans mb-10">
           Collected across longitudinal professional learning cycles.

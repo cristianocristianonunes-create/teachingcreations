@@ -21,7 +21,7 @@ const keynotes = [
   {
     icon: Users,
     title: "Teaching Multilingual Learners Without Lowering the Bar",
-    audience: "K-12 Educators & Curriculum Leaders",
+    audience: "Educators & Curriculum Leaders",
     duration: "60–90 min keynote / Half-day workshop",
     description:
       "Differentiation too often means simplification. This session challenges that assumption and presents a research-backed approach to designing instruction that is simultaneously rigorous and accessible — honoring students' language diversity while refusing to lower cognitive expectations. Grounded in Erika's 28 years of classroom experience with multilingual populations.",

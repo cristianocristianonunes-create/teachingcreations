@@ -34,7 +34,7 @@ const V2HeroSection = () => {
             href="#v2-social-proof"
             className="inline-block mt-3 text-sm text-[#2F5233] font-medium hover:underline underline-offset-4"
           >
-            {get("hero_social_proof", "Feedback collected across multiple cohorts, Spring 2024 – Spring 2025 →")}
+            {get("hero_social_proof", "Feedback collected across multiple educator cohorts →")}
           </a>
         </FadeIn>
 

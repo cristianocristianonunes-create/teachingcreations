@@ -21,7 +21,7 @@ const V2SocialProofStrip = () => {
           </span>
         </div>
         <p className="mt-6 text-sm text-white/50 font-sans">
-          {get("social_institutions", "Focused on K–12 multilingual literacy instruction")}
+          {get("social_institutions", "Focused on multilingual literacy instruction for educators")}
         </p>
       </FadeIn>
     </div>

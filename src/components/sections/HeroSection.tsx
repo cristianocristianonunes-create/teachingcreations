@@ -26,7 +26,7 @@ const HeroSection = () => {
             An Instructional Design Framework for Multilingual Literacy
           </p>
           <p className="text-xs tracking-widest uppercase text-accent font-sans font-medium mb-3">
-            For K–12 educators working with multilingual learners
+            For educators working with multilingual learners
           </p>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif leading-tight tracking-tight text-foreground">
             Making Thinking{" "}

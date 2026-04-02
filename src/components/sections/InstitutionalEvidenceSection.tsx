@@ -56,7 +56,7 @@ const InstitutionalEvidenceSection = () => (
       </div>
       <FadeIn delay={0.4}>
         <p className="text-xs text-muted-foreground/60 font-sans mt-8 text-center italic">
-          Collected from four semesters of professional development feedback, Spring 2024 to Spring 2025.
+          Collected across multiple semesters of professional development feedback.
         </p>
       </FadeIn>
     </div>

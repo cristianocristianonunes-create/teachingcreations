@@ -3,8 +3,8 @@ import FadeIn from "@/components/FadeIn";
 const indicators = [
   "Serving educators since 1997",
   "Professional development delivered across multiple semesters",
-  "Longitudinal feedback collected Spring 2024 – Spring 2025",
-  "Focused on K–12 multilingual literacy instruction",
+  "Longitudinal feedback collected across multiple cohorts",
+  "Focused on multilingual literacy instruction for educators",
 ];
 
 const InstitutionalProofStrip = () => (

@@ -23,7 +23,7 @@ const ProblemSection = () => (
           Participation Can Mask Misunderstanding.
         </h2>
         <p className="text-sm text-muted-foreground font-sans text-center max-w-xl mx-auto mb-3">
-          For K–12 educators working with language-diverse learners.
+          For educators working with language-diverse learners.
         </p>
         <div className="w-16 h-px bg-accent mx-auto mb-12" />
       </FadeIn>

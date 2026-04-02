@@ -114,7 +114,7 @@ const Speaking = () => {
             <h2 className="text-3xl font-serif font-bold text-[#121212] mb-6">Why Erika?</h2>
             <div className="grid md:grid-cols-3 gap-8 text-left">
               {[
-                { stat: "28+", label: "Years in the Classroom", desc: "Not a theorist — a practitioner who built this framework solving real problems with real students." },
+                { stat: "28+", label: "Years in the Classroom", desc: "More than a theorist — a practitioner who built this framework solving real problems with real people." },
                 { stat: "Multiple", label: "Cohorts Trained", desc: "Longitudinal feedback collected across multiple educator cohorts and semesters." },
                 { stat: "✓", label: "Multilingual Literacy Focus", desc: "Every session grounded in the real challenges of teaching language-diverse students." },
               ].map((item) => (

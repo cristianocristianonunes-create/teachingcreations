@@ -9,7 +9,7 @@ import Index from "./pages/Index";
 import CycleOfThinking from "./pages/CycleOfThinking";
 import Books from "./pages/Books";
 import About from "./pages/About";
-import Insights from "./pages/Insights";
+
 import Contact from "./pages/Contact";
 import Evidence from "./pages/Evidence";
 import ProfessionalDevelopmentFeedback from "./pages/ProfessionalDevelopmentFeedback";
